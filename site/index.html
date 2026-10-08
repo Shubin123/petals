@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petals</title>
+  <meta name="description" content="Identify flowers from a photo.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="#/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#petal-mark"/></svg>
+      Petals
+    </a>
+    <nav aria-label="Main">
+      <a href="#/" data-route="identify">Identify</a>
+      <a href="#/species" data-route="species">Species</a>
+      <a href="#/observations" data-route="observations">My observations</a>
+      <a href="#/how" data-route="how">How it works</a>
+    </nav>
+  </header>
+
+  <div id="model-banner" class="banner" hidden>
+    No trained model yet. Run <code>python training/train.py</code>, then restart the server.
+    You can still browse species and read how it works.
+  </div>
+
+  <main id="view" tabindex="-1"></main>
+
+  <footer class="colophon">
+    Petals recognises five flowers: daisy, dandelion, rose, sunflower and tulip.
+    Inspired by Pl@ntNet.
+  </footer>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="petal-mark" viewBox="0 0 32 32">
+      <g fill="currentColor">
+        <ellipse cx="16" cy="8" rx="4.5" ry="7"/>
+        <ellipse cx="16" cy="24" rx="4.5" ry="7"/>
+        <ellipse cx="8" cy="16" rx="7" ry="4.5"/>
+        <ellipse cx="24" cy="16" rx="7" ry="4.5"/>
+      </g>
+      <circle cx="16" cy="16" r="4" fill="var(--pollen)"/>
+    </symbol>
+  </svg>
+
+  <template id="tpl-identify">
+    <section class="identify">
+      <div class="intro">
+        <h1>What flower is this?</h1>
+        <p>Add a photo of the flower. Up to five photos of the same plant make the answer more reliable.</p>
+      </div>
+      <div class="sheet drop" id="drop">
+        <input type="file" id="file" accept="image/*" multiple hidden>
+        <input type="file" id="camera" accept="image/*" capture="environment" hidden>
+        <div class="drop-empty">
+          <svg class="drop-mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#petal-mark"/></svg>
+          <p class="drop-title">Drop photos on the sheet</p>
+          <p class="drop-hint">or paste from the clipboard</p>
+          <div class="drop-actions">
+            <button class="btn primary" type="button" data-pick="file">Choose photos</button>
+            <button class="btn" type="button" data-pick="camera">Take a photo</button>
+          </div>
+        </div>
+        <ul class="thumbs" id="thumbs" aria-label="Selected photos"></ul>
+      </div>
+      <div class="identify-actions" id="identify-actions" hidden>
+        <button class="btn primary" id="go" type="button">Identify</button>
+        <button class="btn quiet" id="add-more" type="button">Add another photo</button>
+        <button class="btn quiet" id="clear" type="button">Clear</button>
+      </div>
+      <p class="error" id="error" role="alert"></p>
+    </section>
+  </template>
+
+  <template id="tpl-result">
+    <section class="result">
+      <div class="specimen">
+        <div class="sheet mounted">
+          <figure class="mount">
+            <img id="hero" alt="">
+            <span class="tape tl"></span><span class="tape br"></span>
+          </figure>
+          <ul class="mini" id="mini" aria-label="Other photos"></ul>
+        </div>
+        <aside class="slip" id="slip" aria-live="polite"></aside>
+      </div>
+      <div class="ranking">
+        <h2>All matches</h2>
+        <ol class="bars" id="bars"></ol>
+        <p class="fineprint">Scores are averaged across your photos. Petals only knows five flowers, so a photo of anything else is matched to the closest of them.</p>
+      </div>
+      <form class="save" id="save-form">
+        <h2>Save this observation</h2>
+        <label>Where did you see it? <span class="optional">(optional)</span>
+          <input name="place" maxlength="120" placeholder="e.g. Golden Gate Park, by the pond">
+        </label>
+        <label>Notes <span class="optional">(optional)</span>
+          <textarea name="note" rows="2" maxlength="500" placeholder="Colour, height, smell…"></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Save observation</button>
+          <a class="btn quiet" href="#/">Identify another flower</a>
+        </div>
+        <p class="status" id="save-status" role="status"></p>
+      </form>
+    </section>
+  </template>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
