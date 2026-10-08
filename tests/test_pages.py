@@ -57,6 +57,7 @@ def page(site, site_url):
 
 def test_species_pages(page, site_url):
     page.goto(site_url + "#/species")
+    page.wait_for_selector(".flora li")
     cards = page.locator(".flora li")
     assert cards.count() == len(LABELS)
     page.wait_for_function("[...document.querySelectorAll('.flora img')].every(i => i.complete && i.naturalWidth > 0)")
