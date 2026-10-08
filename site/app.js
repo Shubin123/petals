@@ -15,6 +15,134 @@ const api = async (path, opts) => {
   return body;
 };
 
+/* ---------- Backends ---------- */
+
+// Talks to the FastAPI server in app/main.py.
+const server = {
+  species: () => api("/api/species"),
+  status: () => api("/api/status"),
+  identify: (photos) => {
+    const form = new FormData();
+    photos.forEach((f) => form.append("photos", f));
+    return api("/api/identify", { method: "POST", body: form });
+  },
+  observations: () => api("/api/observations"),
+  saveObservation: (photos, fields) => {
+    const fd = new FormData();
+    photos.forEach((f) => fd.append("photos", f));
+    for (const [k, v] of Object.entries(fields)) fd.append(k, v);
+    return api("/api/observations", { method: "POST", body: fd });
+  },
+  deleteObservation: (id) => api(`/api/observations/${id}`, { method: "DELETE" }),
+};
+
+// The GitHub Pages build (training/build_pages.py): the model runs in the browser with
+// TensorFlow.js and observations live in IndexedDB.
+const CONFIDENT = 0.6;
+const TFJS = "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js";
+
+const browser = {
+  meta: null,
+  model: null,
+
+  async species() {
+    return api("species.json");
+  },
+
+  async status() {
+    this.meta ??= await api("model/metadata.json");
+    return { ...this.meta, ready: true, confident_threshold: CONFIDENT };
+  },
+
+  async loadModel() {
+    if (!window.tf) {
+      await new Promise((resolve, reject) => {
+        const s = Object.assign(document.createElement("script"), { src: TFJS, onload: resolve });
+        s.onerror = () => reject(new Error("Couldn't load TensorFlow.js. Check your connection."));
+        document.head.append(s);
+      });
+    }
+    await this.status();
+    this.model ??= await tf.loadGraphModel("model/model.json");
+    return this.model;
+  },
+
+  // Same steps as Classifier._prepare in app/model.py: apply EXIF rotation, convert to RGB,
+  // squash to the model's input size with bilinear resampling, keep 0–255 values.
+  async pixels(file) {
+    const [w, h] = this.meta.image_size;
+    let bitmap;
+    try {
+      bitmap = await createImageBitmap(file, { imageOrientation: "from-image" });
+    } catch {
+      throw new Error(`${file.name} could not be read. Try a JPEG or PNG.`);
+    }
+    const canvas = new OffscreenCanvas(w, h);
+    const ctx = canvas.getContext("2d");
+    ctx.imageSmoothingQuality = "medium";
+    ctx.drawImage(bitmap, 0, 0, w, h);
+    bitmap.close();
+    return ctx.getImageData(0, 0, w, h);
+  },
+
+  async identify(photos) {
+    const model = await this.loadModel();
+    const images = await Promise.all(photos.map((f) => this.pixels(f)));
+    const probs = tf.tidy(() => {
+      const batch = tf.stack(images.map((img) => tf.browser.fromPixels(img, 3).toFloat()));
+      return model.predict(batch).mean(0).arraySync();
+    });
+    return rank(this.meta.labels, probs);
+  },
+
+  db: null,
+  async store(mode) {
+    this.db ??= await new Promise((resolve, reject) => {
+      const req = indexedDB.open("petals", 1);
+      req.onupgradeneeded = () => req.result.createObjectStore("observations", { keyPath: "id" });
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+    return this.db.transaction("observations", mode).objectStore("observations");
+  },
+
+  async observations() {
+    const store = await this.store("readonly");
+    const rows = await done(store.getAll());
+    return rows
+      .sort((a, b) => b.created.localeCompare(a.created))
+      .map((o) => ({ ...o, photos: o.photos.map((blob) => URL.createObjectURL(blob)) }));
+  },
+
+  async saveObservation(photos, { species, score, note = "", place = "" }) {
+    const id = crypto.randomUUID().replaceAll("-", "");
+    const row = {
+      id, species, score: Number(score), photos: [...photos],
+      note: note.trim().slice(0, 500), place: place.trim().slice(0, 120),
+      created: new Date().toISOString(),
+    };
+    await done((await this.store("readwrite")).add(row));
+    return { id };
+  },
+
+  async deleteObservation(id) {
+    await done((await this.store("readwrite")).delete(id));
+    return { deleted: id };
+  },
+};
+
+const done = (req) => new Promise((resolve, reject) => {
+  req.onsuccess = () => resolve(req.result);
+  req.onerror = () => reject(req.error);
+});
+
+function rank(labels, probs) {
+  const results = labels.map((id, i) => ({ id, score: probs[i] })).sort((a, b) => b.score - a.score);
+  return { results, confident: results[0].score >= CONFIDENT };
+}
+
+const backend = document.documentElement.dataset.mode === "static" ? browser : server;
+
 const el = (html) => {
   const t = document.createElement("template");
   t.innerHTML = html.trim();
@@ -26,7 +154,7 @@ const pct = (x) => `${Math.round(x * 100)}%`;
 const today = () => new Date().toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
 
 async function loadSpecies() {
-  state.species ??= await api("/api/species");
+  state.species ??= await backend.species();
   return state.species;
 }
 
@@ -78,10 +206,8 @@ function renderIdentify() {
     error.textContent = "";
     go.disabled = true;
     go.textContent = "Identifying…";
-    const form = new FormData();
-    state.photos.forEach((f) => form.append("photos", f));
     try {
-      const data = await api("/api/identify", { method: "POST", body: form });
+      const data = await backend.identify(state.photos);
       state.result = { ...data, photos: [...state.photos], urls: state.photos.map((f) => URL.createObjectURL(f)) };
       location.hash = "#/result";
     } catch (err) {
@@ -156,12 +282,9 @@ async function renderResult() {
     const btn = formEl.querySelector("button[type=submit]");
     btn.disabled = true;
     status.textContent = "";
-    const fd = new FormData(formEl);
-    photos.forEach((f) => fd.append("photos", f));
-    fd.append("species", top.id);
-    fd.append("score", top.score);
+    const fields = { ...Object.fromEntries(new FormData(formEl)), species: top.id, score: top.score };
     try {
-      await api("/api/observations", { method: "POST", body: fd });
+      await backend.saveObservation(photos, fields);
       status.innerHTML = `Observation saved. <a href="#/observations">View my observations</a>`;
       btn.textContent = "Saved";
       state.photos = [];
@@ -226,11 +349,11 @@ async function renderSpecies(id) {
 /* ---------- Observations ---------- */
 
 async function renderObservations() {
-  const [species, obs] = await Promise.all([loadSpecies(), api("/api/observations")]);
+  const [species, obs] = await Promise.all([loadSpecies(), backend.observations()]);
   const section = el(`<section>
     <div class="page-head">
       <h1>My observations</h1>
-      <p>Flowers you've identified and saved.</p>
+      <p>Flowers you've identified and saved.${backend === browser ? " They're kept in this browser only." : ""}</p>
     </div>
     <ul class="log"></ul>
   </section>`);
@@ -256,7 +379,7 @@ async function renderObservations() {
     </li>`);
     li.querySelector("button").onclick = async () => {
       if (!confirm(`Delete this ${s.common.toLowerCase()} observation?`)) return;
-      await api(`/api/observations/${o.id}`, { method: "DELETE" });
+      await backend.deleteObservation(o.id);
       renderObservations();
     };
     log.append(li);
@@ -267,7 +390,7 @@ async function renderObservations() {
 /* ---------- How it works ---------- */
 
 async function renderHow() {
-  const [species, status] = await Promise.all([loadSpecies(), api("/api/status")]);
+  const [species, status] = await Promise.all([loadSpecies(), backend.status()]);
   const sample = Object.values(species).flatMap((s) => s.samples)[0];
   const section = el(`<div class="how">
     <section>
@@ -501,7 +624,10 @@ async function route() {
 window.addEventListener("hashchange", route);
 route();
 
-api("/api/status").then((s) => {
+// Exported for the browser tests in tests/test_pages.py.
+export { backend, rank };
+
+backend.status().then((s) => {
   state.status = s;
   document.getElementById("model-banner").hidden = s.ready;
 }).catch(() => {});

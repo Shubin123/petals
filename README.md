@@ -42,10 +42,37 @@ Training options: `--data-dir` (use your own folder of class sub-folders, e.g. K
 
 On Apple silicon, `tensorflow-metal` trains on the GPU. TensorFlow 2.18 is pinned because later versions don't load the Metal plugin.
 
+## GitHub Pages
+
+https://shubin123.github.io/petals/ runs the same front end with no server: the model is converted to TensorFlow.js and runs in the browser, and observations are kept in the browser's IndexedDB. The build lives in `site/` and is committed, because the trained model in `models/` isn't.
+
+After retraining or changing anything in `app/static/`, rebuild it:
+
+```bash
+uv pip install -p .venv tensorflowjs==4.22.0
+.venv/bin/python training/build_pages.py           # add --check to measure the quantized model's accuracy
+```
+
+Pushing to `main` runs the tests and deploys `site/` (`.github/workflows/pages.yml`).
+
+## Tests
+
+```bash
+uv pip install -p .venv -r requirements-dev.txt
+.venv/bin/python -m playwright install chromium
+.venv/bin/python -m pytest
+```
+
+- `tests/test_api.py`, `tests/test_model.py`: the FastAPI server and photo preprocessing, with a stand-in model.
+- `tests/test_site.py`: `site/` is complete and matches `app/static/`.
+- `tests/test_pages.py`: serves `site/` under `/petals/` like GitHub Pages and drives it in Chromium: identifies every sample photo with the in-browser model, saves and deletes an observation. With a trained model in `models/`, also checks the browser's scores match Keras.
+- `tests/test_build_pages.py`: the conversion helpers (needs TensorFlow; skipped otherwise).
+
 ## Layout
 
 ```
 training/train.py   data pipeline, augmentation, model, LR schedule, export
+training/build_pages.py  static build for GitHub Pages (TF.js model) into site/
 app/main.py         FastAPI: /api/identify, /api/species, /api/observations, /api/status
 app/model.py        loads models/petals.keras and scores photos
 app/species.json    species descriptions
