@@ -1,6 +1,6 @@
 # Petals
 
-A small [Pl@ntNet](https://plantnet.org/en/)-style web app: photograph a flower, and Petals tells you what it is, how sure it is, and lets you keep a log of your observations.
+Petals is a flower-identification web app that recognises daisies, dandelions, roses, sunflowers and tulips from photos or a live camera feed. Explore species guides, see confidence scores, and save observations with a place and notes. The [web app](https://shubin123.github.io/petals/) runs its model in your browser and stores your observations locally.
 
 It recognises five flowers: **daisy, dandelion, rose, sunflower and tulip**.
 
