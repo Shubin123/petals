@@ -235,6 +235,36 @@ main:focus { outline: none; }
 .error { color: var(--danger); font-weight: 500; }
 .error:empty { display: none; }
 
+/* Live camera */
+.live-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--sheet);
+  cursor: pointer;
+  position: relative;
+}
+.live-toggle > span:first-child { flex: 1; display: grid; gap: 0.15rem; }
+.live-toggle strong { font-weight: 600; }
+#live-camera-hint { color: var(--muted); font-size: 0.9rem; }
+.live-toggle input { position: absolute; opacity: 0; width: 1px; height: 1px; padding: 0; }
+.switch-track { width: 3rem; height: 1.75rem; border-radius: 999px; background: var(--muted); padding: 0.2rem; flex-shrink: 0; transition: background 0.15s; }
+.switch-track::after { content: ""; display: block; width: 1.35rem; height: 1.35rem; border-radius: 50%; background: var(--sheet); transition: transform 0.15s; }
+.live-toggle input:checked + .switch-track { background: var(--leaf); }
+.live-toggle input:checked + .switch-track::after { background: var(--on-leaf); transform: translateX(1.25rem); }
+.live-toggle input:focus-visible + .switch-track { outline: 2px solid var(--leaf); outline-offset: 3px; }
+.live-toggle input:disabled + .switch-track { opacity: 0.5; }
+.live-panel { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); overflow: hidden; }
+.live-panel video { display: block; width: 100%; height: 100%; min-height: 15rem; max-height: 32rem; object-fit: contain; background: #111914; }
+.live-details { display: grid; gap: 1rem; padding: 1.5rem; align-content: center; justify-items: start; }
+.live-status { color: var(--leaf); font-size: 0.9rem; font-weight: 500; }
+.live-result { display: grid; gap: 0.35rem; }
+.live-determination { color: var(--muted); font-size: 0.9rem; }
+.live-result .sci { color: var(--ink-2); font-style: italic; }
+
 /* Result: mounted specimen + determination slip */
 .result { display: grid; gap: 3rem; }
 .specimen {
@@ -421,7 +451,8 @@ input:focus, textarea:focus { border-color: var(--leaf); outline: none; box-shad
 .loading { color: var(--muted); }
 
 @media (max-width: 760px) {
-  .specimen, .species-detail { grid-template-columns: 1fr; }
+  .specimen, .species-detail, .live-panel { grid-template-columns: 1fr; }
+  .live-panel video { height: auto; min-height: 0; }
   .slip { position: static; transform: none; }
   .bars li { grid-template-columns: 7rem 1fr 3rem; gap: 0.75rem; }
   .thumbs img { width: 8.5rem; height: 8.5rem; }

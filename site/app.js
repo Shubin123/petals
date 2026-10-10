@@ -160,6 +160,16 @@ async function loadSpecies() {
 
 /* ---------- Identify ---------- */
 
+let disposeIdentify = () => {};
+// Wait for an earlier prediction even if live mode was switched off and back on.
+let livePrediction = Promise.resolve();
+
+function showResult(data, photos) {
+  state.result?.urls.forEach((url) => URL.revokeObjectURL(url));
+  state.result = { ...data, photos: [...photos], urls: photos.map((f) => URL.createObjectURL(f)) };
+  location.hash = "#/result";
+}
+
 function renderIdentify() {
   view.replaceChildren(document.getElementById("tpl-identify").content.cloneNode(true));
   const drop = view.querySelector("#drop");
@@ -169,6 +179,132 @@ function renderIdentify() {
   const actions = view.querySelector("#identify-actions");
   const error = view.querySelector("#error");
   const go = view.querySelector("#go");
+  const liveSwitch = view.querySelector("#live-camera");
+  const livePanel = view.querySelector("#live-panel");
+  const video = view.querySelector("#live-video");
+  const liveStatus = view.querySelector("#live-status");
+  const liveResult = view.querySelector("#live-result");
+  const liveUse = view.querySelector("#live-use");
+  const canvas = document.createElement("canvas");
+  let liveSession = null;
+  let latestMatch = null;
+
+  const stopLive = () => {
+    const session = liveSession;
+    liveSession = null;
+    clearTimeout(session?.timer);
+    session?.stream?.getTracks().forEach((track) => track.stop());
+    video.pause();
+    video.srcObject = null;
+    liveSwitch.checked = false;
+    livePanel.hidden = true;
+    liveResult.hidden = true;
+    liveUse.disabled = true;
+    latestMatch = null;
+    drop.hidden = false;
+    actions.hidden = state.photos.length === 0;
+  };
+
+  const scan = async (session) => {
+    if (liveSession !== session) return;
+    if (document.hidden || video.readyState < 2 || !video.videoWidth) {
+      session.timer = setTimeout(() => scan(session), 250);
+      return;
+    }
+    try {
+      const scale = Math.min(1, 640 / Math.max(video.videoWidth, video.videoHeight));
+      canvas.width = Math.round(video.videoWidth * scale);
+      canvas.height = Math.round(video.videoHeight * scale);
+      canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+      const blob = await new Promise((resolve, reject) => canvas.toBlob(
+        (blob) => blob ? resolve(blob) : reject(new Error("Couldn't read the camera frame. Try turning Live camera off and on.")),
+        "image/jpeg", 0.85,
+      ));
+      if (liveSession !== session) return;
+      const photo = new File([blob], "live-camera.jpg", { type: "image/jpeg" });
+      const species = await loadSpecies();
+      if (liveSession !== session) return;
+      const prediction = livePrediction.then(() => liveSession === session ? backend.identify([photo]) : null);
+      livePrediction = prediction.catch(() => {});
+      const data = await prediction;
+      if (liveSession !== session || !data) return;
+      const top = data.results[0];
+      const sp = species[top.id];
+      latestMatch = { data, photo };
+      liveResult.querySelector("#live-determination").textContent = data.confident ? "Live match" : "Undetermined. Closest match:";
+      liveResult.querySelector("#live-name").textContent = sp.common;
+      liveResult.querySelector("#live-scientific").textContent = sp.scientific;
+      liveResult.querySelector("#live-score").textContent = pct(top.score);
+      liveResult.hidden = false;
+      liveUse.disabled = false;
+      liveStatus.textContent = "Live · updating automatically";
+      error.textContent = "";
+    } catch (err) {
+      if (liveSession !== session) return;
+      latestMatch = null;
+      liveResult.hidden = true;
+      liveUse.disabled = true;
+      liveStatus.textContent = "Camera is on · retrying identification…";
+      error.textContent = err.message;
+    }
+    if (liveSession === session) session.timer = setTimeout(() => scan(session), 1500);
+  };
+
+  const startLive = async () => {
+    stopLive();
+    const session = { stream: null, timer: null };
+    liveSession = session;
+    liveSwitch.checked = true;
+    drop.hidden = true;
+    actions.hidden = true;
+    livePanel.hidden = false;
+    liveStatus.textContent = "Starting camera…";
+    error.textContent = "";
+    try {
+      if (!navigator.mediaDevices?.getUserMedia) {
+        throw new Error("Live camera needs a browser with camera support on HTTPS or localhost. You can still choose photos.");
+      }
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: { ideal: "environment" }, width: { ideal: 640 }, height: { ideal: 480 } },
+        audio: false,
+      });
+      if (liveSession !== session) {
+        stream.getTracks().forEach((track) => track.stop());
+        return;
+      }
+      session.stream = stream;
+      stream.getVideoTracks().forEach((track) => track.addEventListener("ended", () => {
+        if (liveSession !== session) return;
+        stopLive();
+        error.textContent = "The camera disconnected. Turn Live camera on to try again.";
+      }));
+      video.srcObject = stream;
+      await video.play();
+      if (liveSession !== session) return;
+      liveStatus.textContent = "Identifying the live view…";
+      scan(session);
+    } catch (err) {
+      if (liveSession !== session) return;
+      stopLive();
+      const messages = {
+        NotAllowedError: "Camera access was blocked. Allow camera access in your browser, then turn Live camera on again.",
+        SecurityError: "Camera access was blocked. Allow camera access in your browser, then turn Live camera on again.",
+        NotFoundError: "No camera was found. Connect a camera or choose photos.",
+        NotReadableError: "The camera couldn't start. Close other camera apps and try again.",
+      };
+      error.textContent = messages[err.name] || err.message;
+    }
+  };
+
+  liveSwitch.onchange = () => liveSwitch.checked ? startLive() : stopLive();
+  liveUse.onclick = () => {
+    if (!latestMatch) return;
+    const { data, photo } = latestMatch;
+    stopLive();
+    state.photos = [photo];
+    showResult(data, state.photos);
+  };
+  disposeIdentify = () => { stopLive(); document.onpaste = null; };
 
   const refresh = () => {
     thumbs.replaceChildren(...state.photos.map((f, i) => {
@@ -178,11 +314,12 @@ function renderIdentify() {
       return li;
     }));
     drop.classList.toggle("has-photos", state.photos.length > 0);
-    actions.hidden = state.photos.length === 0;
+    actions.hidden = liveSession !== null || state.photos.length === 0;
     view.querySelector("#add-more").hidden = state.photos.length >= MAX_PHOTOS;
   };
 
   const add = (files) => {
+    if (liveSession) return;
     error.textContent = "";
     const images = [...files].filter((f) => f.type.startsWith("image/"));
     if (images.length < files.length) error.textContent = "Only image files can be added.";
@@ -205,14 +342,18 @@ function renderIdentify() {
   go.onclick = async () => {
     error.textContent = "";
     go.disabled = true;
+    liveSwitch.disabled = true;
     go.textContent = "Identifying…";
+    const photos = [...state.photos];
     try {
-      const data = await backend.identify(state.photos);
-      state.result = { ...data, photos: [...state.photos], urls: state.photos.map((f) => URL.createObjectURL(f)) };
-      location.hash = "#/result";
+      const data = await backend.identify(photos);
+      if (!go.isConnected) return;
+      showResult(data, photos);
     } catch (err) {
+      if (!go.isConnected) return;
       error.textContent = err.message;
       go.disabled = false;
+      liveSwitch.disabled = false;
       go.textContent = "Identify";
     }
   };
@@ -416,7 +557,9 @@ async function renderHow() {
       <div class="prose">
         <p>${status.frozen_base
           ? "The pretrained network was kept as it is, and only the classification layer was trained on the TensorFlow Flowers dataset."
-          : "The whole network was fine-tuned on the TensorFlow Flowers dataset."} The learning rate warms up for eight epochs, then decays exponentially. Training stops early when validation loss stops improving. This follows the approach in <a href="https://www.kaggle.com/code/nikhilmishra21/flowers-notebook-cnn" target="_blank" rel="noopener">Flowers Notebook – CNN</a>.</p>
+          : status.hyperparameters?.fine_tune_after
+            ? "The classification layer was trained first with the pretrained network kept as it is. Then the top blocks of the network were fine-tuned along with it on the TensorFlow Flowers dataset, at a lower learning rate."
+            : "The whole network was fine-tuned on the TensorFlow Flowers dataset."} The learning rate warms up for eight epochs, then decays exponentially. Training stops early when validation loss stops improving. This follows the approach in <a href="https://www.kaggle.com/code/nikhilmishra21/flowers-notebook-cnn" target="_blank" rel="noopener">Flowers Notebook – CNN</a>.</p>
       </div>
     </section>
 
@@ -603,6 +746,8 @@ function renderNotFound() {
 }
 
 async function route() {
+  disposeIdentify();
+  disposeIdentify = () => {};
   const [, page = "", arg] = location.hash.split("/");
   const nav = { "": "identify", result: "identify", species: "species", observations: "observations", how: "how" }[page];
   document.querySelectorAll("nav a").forEach((a) =>
@@ -622,6 +767,7 @@ async function route() {
 }
 
 window.addEventListener("hashchange", route);
+window.addEventListener("pagehide", () => disposeIdentify());
 route();
 
 // Exported for the browser tests in tests/test_pages.py.

@@ -53,7 +53,26 @@
     <section class="identify">
       <div class="intro">
         <h1>What flower is this?</h1>
-        <p>Add a photo of the flower. Up to five photos of the same plant make the answer more reliable.</p>
+        <p>Turn on the live camera to identify as you point, or add up to five photos of the same plant.</p>
+      </div>
+      <label class="live-toggle" for="live-camera">
+        <span><strong>Live camera</strong><span id="live-camera-hint">Keep the camera on and identify flowers automatically.</span></span>
+        <input type="checkbox" id="live-camera" role="switch" aria-label="Live camera" aria-describedby="live-camera-hint" aria-controls="live-panel">
+        <span class="switch-track" aria-hidden="true"></span>
+      </label>
+      <div class="sheet live-panel" id="live-panel" hidden>
+        <video id="live-video" autoplay muted playsinline aria-label="Live camera preview"></video>
+        <div class="live-details">
+          <p class="live-status" id="live-status" role="status">Starting camera…</p>
+          <div class="live-result" id="live-result" aria-live="polite" aria-atomic="true" hidden>
+            <p class="live-determination" id="live-determination"></p>
+            <h2 id="live-name"></h2>
+            <p class="sci" id="live-scientific"></p>
+            <p>Confidence <strong id="live-score"></strong></p>
+          </div>
+          <button class="btn primary" id="live-use" type="button" disabled>View &amp; save result</button>
+          <p class="fineprint">Point at a well-lit flower head. The match updates while the switch is on.</p>
+        </div>
       </div>
       <div class="sheet drop" id="drop">
         <input type="file" id="file" accept="image/*" multiple hidden>

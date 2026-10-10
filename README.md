@@ -4,7 +4,7 @@ A small [Pl@ntNet](https://plantnet.org/en/)-style web app: photograph a flower,
 
 It recognises five flowers: **daisy, dandelion, rose, sunflower and tulip**.
 
-- **Identify**: drop, paste or take up to five photos of the same plant. Scores are averaged across photos. The result is shown as a determination slip with ranked alternatives. Anything under 60% confidence is marked undetermined.
+- **Identify**: switch on **Live camera** for an always-on preview with automatic flower identification, or drop, paste or take up to five photos of the same plant. Live matches update automatically; **View & save result** opens the latest frame as a determination slip. Scores are averaged across selected photos. Anything under 60% confidence is marked undetermined.
 - **Species**: a page for each flower with identification tips and sample photos from the dataset.
 - **My observations**: save identifications with a place and notes (stored in SQLite).
 - **How it works**: the model, its training curve, and a live demo of the data augmentation applied to your own photo.
