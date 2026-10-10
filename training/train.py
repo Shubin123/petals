@@ -50,11 +50,9 @@ def download_tf_flowers(dest: pathlib.Path) -> pathlib.Path:
     return target
 
 
-def learning_rate(epoch):
+def learning_rate(epoch, lr_max=0.0004, lr_rampup_epochs=8):
     lr_start = 0.00001
-    lr_max = 0.0004
     lr_min = 0.00001
-    lr_rampup_epochs = 8
     lr_sustain_epochs = 0
     lr_exp_decay = 0.8
 
@@ -65,7 +63,8 @@ def learning_rate(epoch):
     return (lr_max - lr_min) * lr_exp_decay ** (epoch - lr_rampup_epochs - lr_sustain_epochs) + lr_min
 
 
-def build_model(num_classes: int, fine_tune: bool, weights="imagenet") -> keras.Model:
+def build_model(num_classes: int, fine_tune: bool, weights="imagenet", freeze_bn=False,
+                fine_tune_after: str | None = None) -> keras.Model:
     augment = keras.Sequential([
         layers.RandomContrast(factor=0.10),
         layers.RandomFlip(mode="horizontal"),
@@ -75,6 +74,18 @@ def build_model(num_classes: int, fine_tune: bool, weights="imagenet") -> keras.
     conv_base = keras.applications.InceptionResNetV2(
         weights=weights, include_top=False, input_shape=IMAGE_SIZE + (3,))
     conv_base.trainable = fine_tune
+    if fine_tune and fine_tune_after:
+        # Fine-tune only the layers computed from this layer's output; the rest stay as pretrained.
+        top = {id(layer) for layer in base_top(conv_base, fine_tune_after).layers}
+        for layer in conv_base.layers:
+            if id(layer) not in top:
+                layer.trainable = False
+    if freeze_bn:
+        # Non-trainable BatchNormalization layers run in inference mode, keeping ImageNet statistics
+        # instead of re-estimating them from small batches.
+        for layer in conv_base.layers:
+            if isinstance(layer, layers.BatchNormalization):
+                layer.trainable = False
 
     return keras.Sequential([
         keras.Input(shape=IMAGE_SIZE + (3,)),
@@ -88,6 +99,31 @@ def build_model(num_classes: int, fine_tune: bool, weights="imagenet") -> keras.
         layers.Dropout(0.2),
         layers.Dense(num_classes, activation="softmax"),
     ], name="petals")
+
+
+def base_top(conv_base: keras.Model, after: str) -> keras.Model:
+    """The part of the base that runs after the named layer, sharing its layers and weights."""
+    return keras.Model(conv_base.get_layer(after).output, conv_base.output)
+
+
+def copy_weights(src: keras.Model, dst: keras.Model):
+    """Copy weights between two models built by build_model, whatever their trainable settings.
+
+    get_weights() order depends on which layers are trainable, and layer names get numbered
+    suffixes when a model is built twice, so weights are matched layer by layer and by variable
+    name within each layer.
+    """
+    def leaves(model):
+        for layer in model.layers:
+            yield from leaves(layer) if isinstance(layer, keras.Model) else [layer]
+
+    pairs = list(zip(leaves(src), leaves(dst), strict=True))
+    for a, b in pairs:
+        by_name = {v.name: v for v in a.weights}
+        if type(a) is not type(b) or sorted(by_name) != sorted(v.name for v in b.weights):
+            raise ValueError(f"Models don't match at {a.name} / {b.name}")
+        for v in b.weights:
+            v.assign(by_name[v.name])
 
 
 def copy_samples(model, class_dirs: list[str], val_files: list[str], out: pathlib.Path, per_class=4):
@@ -118,7 +154,17 @@ def main():
     parser.add_argument("--patience", type=int, default=3)
     parser.add_argument("--frozen-base", action="store_true",
                         help="train only the head (much faster, a few points less accurate)")
+    parser.add_argument("--lr-max", type=float, default=0.0004, help="peak learning rate after warmup")
+    parser.add_argument("--warmup", type=int, default=8, help="warmup epochs")
+    parser.add_argument("--freeze-bn", action="store_true",
+                        help="keep the base's batch-norm statistics fixed while fine-tuning")
+    parser.add_argument("--fine-tune-after", metavar="LAYER",
+                        help="fine-tune only the InceptionResNetV2 layers after this one, e.g. mixed_6a")
+    parser.add_argument("--init-from", type=pathlib.Path,
+                        help="start from a trained .keras model, e.g. continue a --frozen-base run")
     parser.add_argument("--out", type=pathlib.Path, default=ROOT / "models")
+    parser.add_argument("--samples-dir", type=pathlib.Path, default=ROOT / "app" / "static" / "samples",
+                        help="where to copy sample photos for the species pages")
     args = parser.parse_args()
 
     data_dir = args.data_dir or download_tf_flowers(ROOT / "data")
@@ -135,14 +181,19 @@ def main():
     train_ds = train_ds.prefetch(tf.data.AUTOTUNE)
     val_ds = val_ds.prefetch(tf.data.AUTOTUNE)
 
-    model = build_model(len(labels), fine_tune=not args.frozen_base)
+    fine_tune = not args.frozen_base
+    model = build_model(len(labels), fine_tune=fine_tune, freeze_bn=args.freeze_bn,
+                        fine_tune_after=args.fine_tune_after)
+    if args.init_from:
+        copy_weights(keras.models.load_model(args.init_from), model)
     model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
 
     args.out.mkdir(parents=True, exist_ok=True)
     history = model.fit(
         train_ds, epochs=args.epochs, validation_data=val_ds,
         callbacks=[
-            keras.callbacks.LearningRateScheduler(learning_rate, verbose=1),
+            keras.callbacks.LearningRateScheduler(
+                lambda epoch: learning_rate(epoch, args.lr_max, args.warmup), verbose=1),
             keras.callbacks.EarlyStopping(monitor="val_loss", patience=args.patience,
                                           verbose=1, restore_best_weights=True),
         ])
@@ -151,8 +202,9 @@ def main():
     print(f"Validation accuracy: {accuracy * 100:.2f}%")
 
     # Save an uncompiled copy: Adam's state would triple the file size and isn't needed to serve.
-    inference = build_model(len(labels), fine_tune=not args.frozen_base, weights=None)
-    inference.set_weights(model.get_weights())
+    inference = build_model(len(labels), fine_tune=fine_tune, weights=None, freeze_bn=args.freeze_bn,
+                        fine_tune_after=args.fine_tune_after)
+    copy_weights(model, inference)
     inference.save(args.out / "petals.keras")
     meta = {
         "labels": labels,
@@ -162,10 +214,14 @@ def main():
         "train_images": train_count,
         "val_images": len(val_files),
         "frozen_base": args.frozen_base,
+        "hyperparameters": {"lr_max": args.lr_max, "warmup": args.warmup, "batch_size": args.batch_size,
+                            "freeze_bn": args.freeze_bn,
+                            "fine_tune_after": args.fine_tune_after, "patience": args.patience,
+                            "init_from": args.init_from.name if args.init_from else None},
         "history": {k: [float(v) for v in vs] for k, vs in history.history.items()},
     }
     (args.out / "metadata.json").write_text(json.dumps(meta, indent=2))
-    copy_samples(model, class_dirs, val_files, ROOT / "app" / "static" / "samples")
+    copy_samples(model, class_dirs, val_files, args.samples_dir)
     print(f"Saved model to {args.out / 'petals.keras'}")
 
 

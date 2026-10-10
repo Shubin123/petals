@@ -74,6 +74,7 @@ def status():
         "val_images": meta.get("val_images"),
         "history": meta.get("history"),
         "frozen_base": meta.get("frozen_base"),
+        "hyperparameters": meta.get("hyperparameters"),
         "confident_threshold": CONFIDENT,
     }
 
