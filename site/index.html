@@ -80,10 +80,11 @@
         <div class="drop-empty">
           <svg class="drop-mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#petal-mark"/></svg>
           <p class="drop-title">Drop photos on the sheet</p>
-          <p class="drop-hint">or paste from the clipboard</p>
+          <p class="drop-hint">or paste an image with ⌘V / Ctrl+V</p>
           <div class="drop-actions">
             <button class="btn primary" type="button" data-pick="file">Choose photos</button>
             <button class="btn" type="button" data-pick="camera">Take a photo</button>
+            <button class="btn" type="button" data-paste>Paste image</button>
           </div>
         </div>
         <ul class="thumbs" id="thumbs" aria-label="Selected photos"></ul>
@@ -91,6 +92,7 @@
       <div class="identify-actions" id="identify-actions" hidden>
         <button class="btn primary" id="go" type="button">Identify</button>
         <button class="btn quiet" id="add-more" type="button">Add another photo</button>
+        <button class="btn quiet" type="button" data-paste>Paste image</button>
         <button class="btn quiet" id="clear" type="button">Clear</button>
       </div>
       <p class="error" id="error" role="alert"></p>

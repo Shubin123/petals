@@ -190,6 +190,66 @@ def test_rejects_non_image(page):
     assert page.locator("#identify-actions").is_hidden()
 
 
+@pytest.fixture
+def image_clipboard(page):
+    page.context.grant_permissions(["clipboard-read", "clipboard-write"])
+    page.evaluate("""async () => {
+        window.previousClipboard = await navigator.clipboard.read();
+        const blob = await (await fetch('samples/acer_rubrum-0.jpg')).blob();
+        const bitmap = await createImageBitmap(blob);
+        const canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
+        canvas.getContext('2d').drawImage(bitmap, 0, 0);
+        bitmap.close();
+        const png = await canvas.convertToBlob({type: 'image/png'});
+        await navigator.clipboard.write([new ClipboardItem({'image/png': png})]);
+    }""")
+    yield
+    page.evaluate("""async () => {
+        if (window.previousClipboard.length) await navigator.clipboard.write(window.previousClipboard);
+        else await navigator.clipboard.writeText('');
+    }""")
+    page.context.clear_permissions()
+
+
+@pytest.mark.parametrize("method", ["button", "shortcut"])
+def test_real_clipboard_image_is_identified(page, image_clipboard, method):
+    if page.locator("#clear").is_visible():
+        page.click("#clear")
+    # '#' is also a valid home route; the old handler rejected it.
+    page.evaluate("location.hash = '#'")
+    page.wait_for_selector("#drop")
+    if method == "button":
+        page.locator(".drop-actions [data-paste]").click()
+    else:
+        page.locator("#view").focus()
+        page.keyboard.press("ControlOrMeta+V")
+    page.wait_for_selector("#thumbs li img")
+    page.wait_for_function("document.querySelector('#thumbs img').naturalWidth > 0")
+    assert page.locator("#thumbs li").count() == 1
+    page.click("#go")
+    page.wait_for_selector(".slip-name", timeout=120_000)
+    assert page.locator(".slip-name").inner_text() == "Acer rubrum"
+
+
+def test_clipboard_reports_no_image_and_denied_access(page):
+    if page.locator("#clear").is_visible():
+        page.click("#clear")
+    page.evaluate("""() => {
+        window.realClipboardRead = navigator.clipboard.read.bind(navigator.clipboard);
+        navigator.clipboard.read = async () => [new ClipboardItem({'text/plain': new Blob(['text'], {type:'text/plain'})})];
+    }""")
+    try:
+        page.locator(".drop-actions [data-paste]").click()
+        page.wait_for_selector("#error:has-text('No image in the clipboard')")
+        assert page.locator("#thumbs li").count() == 0
+        page.evaluate("() => { navigator.clipboard.read = async () => { throw new DOMException('Denied', 'NotAllowedError'); }; }")
+        page.locator(".drop-actions [data-paste]").click()
+        page.wait_for_selector("#error:has-text('Clipboard access was blocked')")
+        assert page.locator(".drop-actions [data-paste]").is_enabled()
+    finally:
+        page.evaluate("() => { navigator.clipboard.read = window.realClipboardRead; }")
+
+
 def test_unreadable_image_shows_error(page):
     page.set_input_files("#file", files=[{"name": "broken.jpg", "mimeType": "image/jpeg", "buffer": b"junk"}])
     page.click("#go")

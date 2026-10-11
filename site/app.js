@@ -304,7 +304,7 @@ function renderIdentify() {
     state.photos = [photo];
     showResult(data, state.photos);
   };
-  disposeIdentify = () => { stopLive(); document.onpaste = null; };
+  disposeIdentify = () => { stopLive(); document.removeEventListener("paste", onPaste); };
 
   const refresh = () => {
     thumbs.replaceChildren(...state.photos.map((f, i) => {
@@ -337,7 +337,44 @@ function renderIdentify() {
   drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });
   drop.addEventListener("dragleave", () => drop.classList.remove("over"));
   drop.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("over"); add(e.dataTransfer.files); });
-  document.onpaste = (e) => { if (location.hash === "#/" || location.hash === "") add(e.clipboardData.files); };
+  const onPaste = (e) => {
+    if (liveSession || e.target.closest?.("input, textarea, [contenteditable]")) return;
+    const data = e.clipboardData;
+    const images = [...(data?.items ?? [])]
+      .filter((item) => item.kind === "file" && item.type.startsWith("image/"))
+      .map((item) => item.getAsFile()).filter(Boolean);
+    if (!images.length) images.push(...[...(data?.files ?? [])].filter((f) => f.type.startsWith("image/")));
+    if (images.length) { e.preventDefault(); add(images); }
+  };
+  document.addEventListener("paste", onPaste);
+  view.querySelectorAll("[data-paste]").forEach((button) => {
+    button.onclick = async () => {
+      error.textContent = "";
+      if (!navigator.clipboard?.read) {
+        error.textContent = "Use ⌘V / Ctrl+V to paste an image, or choose a photo.";
+        return;
+      }
+      button.disabled = true;
+      try {
+        const items = await navigator.clipboard.read();
+        const images = [];
+        for (const item of items) {
+          const type = item.types.find((type) => type.startsWith("image/"));
+          if (!type) continue;
+          const blob = await item.getType(type);
+          const extension = type.split("/")[1].replace("jpeg", "jpg");
+          images.push(new File([blob], `clipboard-${images.length + 1}.${extension}`, { type }));
+        }
+        if (!button.isConnected || liveSession) return;
+        if (!images.length) error.textContent = "No image in the clipboard. Copy the image itself, then paste again.";
+        else add(images);
+      } catch {
+        if (button.isConnected) error.textContent = "Clipboard access was blocked. Allow access, or use ⌘V / Ctrl+V to paste the image.";
+      } finally {
+        if (button.isConnected) button.disabled = false;
+      }
+    };
+  });
 
   go.onclick = async () => {
     error.textContent = "";
