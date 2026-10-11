@@ -5,9 +5,10 @@ import re
 
 import pytest
 
-from conftest import LABELS, ROOT
+from conftest import ROOT
 
 SITE = ROOT / "site"
+LABELS = json.loads((SITE / "model/metadata.json").read_text())["labels"]
 STATIC = ROOT / "app" / "static"
 
 
@@ -55,7 +56,8 @@ def test_weights_are_quantized():
     manifest = json.loads((SITE / "model" / "model.json").read_text())
     weights = [w for group in manifest["weightsManifest"] for w in group["weights"]]
     floats = [w for w in weights if w["dtype"] == "float32"]
-    assert floats and all(w.get("quantization", {}).get("dtype") == "uint8" for w in floats)
+    meta = json.loads((SITE / "model/metadata.json").read_text())
+    assert floats and all(w.get("quantization", {}).get("dtype") == meta.get("quantization", "uint8") for w in floats)
 
 
 def test_metadata_matches_species():

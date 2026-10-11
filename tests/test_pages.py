@@ -10,11 +10,12 @@ from urllib.parse import urlsplit
 import pytest
 from PIL import Image
 
-from conftest import LABELS, ROOT
+from conftest import ROOT
 
 pytest.importorskip("playwright")
 
 SITE = ROOT / "site"
+LABELS = json.loads((SITE / "model/metadata.json").read_text())["labels"]
 SPECIES = json.loads((SITE / "species.json").read_text())
 SAMPLES = [s for info in SPECIES.values() for s in info["samples"]]
 
@@ -63,7 +64,7 @@ def test_species_pages(page, site_url):
     page.wait_for_selector(".flora li")
     cards = page.locator(".flora li")
     assert cards.count() == len(LABELS)
-    page.wait_for_function("[...document.querySelectorAll('.flora img')].every(i => i.complete && i.naturalWidth > 0)")
+    page.wait_for_function("[...document.querySelectorAll('.flora img')].filter(i => i.getBoundingClientRect().top < innerHeight).every(i => i.complete && i.naturalWidth > 0)")
 
     page.click("text=Sunflower")
     page.wait_for_selector("h1:has-text('Sunflower')")
@@ -106,7 +107,7 @@ def test_identifies_every_sample(page):
         assert sorted(s["id"] for s in scores) == LABELS
         assert sum(s["score"] for s in scores) == pytest.approx(1, abs=1e-4)
         assert scores == sorted(scores, key=lambda s: -s["score"])
-        if scores[0]["id"] != url.split("/")[1].split("-")[0]:
+        if scores[0]["id"] != url.split("/")[1].rsplit("-", 1)[0]:
             wrong.append((url, scores[0]))
     # Samples were picked because the trained model scores them >= 95%, so all should be right.
     assert not wrong
@@ -164,6 +165,25 @@ def test_identify_save_and_delete_observation(page, site_url):
     page.wait_for_selector(".empty-state")
 
 
+def test_tree_leaf_identification_and_observation(page, site_url):
+    sid = "acer_rubrum"
+    page.set_input_files("#file", SITE / SPECIES[sid]["samples"][0])
+    page.click("#go")
+    page.wait_for_selector(".slip-name", timeout=120_000)
+    assert page.locator(".slip-name").inner_text() == "Acer rubrum"
+    page.fill("input[name=place]", "Test tree")
+    page.click("#save-form button[type=submit]")
+    page.wait_for_selector("#save-status:has-text('Observation saved')")
+    page.goto(site_url + "#/observations")
+    page.wait_for_selector(".log li")
+    assert "Red maple" in page.locator(".log li").inner_text()
+    page.reload()
+    page.wait_for_selector(".log li")
+    page.once("dialog", lambda d: d.accept())
+    page.locator(".log li button:has-text('Delete')").click()
+    page.wait_for_selector(".empty-state")
+
+
 def test_rejects_non_image(page):
     page.set_input_files("#file", files=[{"name": "notes.txt", "mimeType": "text/plain", "buffer": b"hi"}])
     assert page.locator("#error").inner_text() == "Only image files can be added."
@@ -178,7 +198,7 @@ def test_unreadable_image_shows_error(page):
 
 
 @pytest.fixture(scope="module")
-def camera_browser(playwright, tmp_path_factory):
+def camera_browser(playwright, tmp_path_factory, browser_type_launch_args):
     """Feed a real sample flower through Chromium's camera and the normal frame pipeline."""
     import numpy as np
 
@@ -192,11 +212,11 @@ def camera_browser(playwright, tmp_path_factory):
     frame = tmp_path_factory.mktemp("camera") / "daisy.y4m"
     frame.write_bytes(b"YUV4MPEG2 W640 H360 F30:1 Ip A1:1 C420jpeg\nFRAME\n" + b"".join(
         plane.clip(0, 255).astype(np.uint8).tobytes() for plane in (y, subsample(u), subsample(v))))
-    browser = playwright.chromium.launch(args=[
+    browser = playwright.chromium.launch(**{**browser_type_launch_args, "args": [
         "--use-fake-ui-for-media-stream",
         "--use-fake-device-for-media-stream",
         f"--use-file-for-fake-video-capture={frame}",
-    ])
+    ]})
     yield browser
     browser.close()
 

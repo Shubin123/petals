@@ -21,7 +21,7 @@ DB_PATH = DATA / "petals.db"
 SPECIES = json.loads((HERE / "species.json").read_text())
 MAX_PHOTOS = 5
 MAX_BYTES = 15 * 1024 * 1024
-# Below this the top match is shown as uncertain: the model only knows five species.
+# Below this the top match is shown as uncertain: scores compare only supported plant classes.
 CONFIDENT = 0.6
 
 classifier = Classifier()
@@ -75,6 +75,7 @@ def status():
         "history": meta.get("history"),
         "frozen_base": meta.get("frozen_base"),
         "hyperparameters": meta.get("hyperparameters"),
+        **{key: meta.get(key) for key in ("architecture", "image_size", "sources", "test_accuracy", "test_images", "test_by_source")},
         "confident_threshold": CONFIDENT,
     }
 

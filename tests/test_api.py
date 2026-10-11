@@ -60,7 +60,7 @@ def test_status_without_model(client, fake):
 
 def test_species_lists_all_labels(client):
     species = client.get("/api/species").json()
-    assert sorted(species) == LABELS
+    assert sorted(species) == sorted(main.SPECIES)
     for sid, info in species.items():
         assert info["id"] == sid
         assert {"common", "scientific", "family", "description", "look_for", "flowering", "wiki"} <= info.keys()

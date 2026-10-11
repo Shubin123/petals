@@ -46,7 +46,7 @@ def download_tf_flowers(dest: pathlib.Path) -> pathlib.Path:
     with tarfile.open(archive) as tar:
         tar.extractall(dest, filter="data")
     archive.unlink()
-    (target / "LICENSE.txt").unlink(missing_ok=True)
+    # Keep the per-photo Flickr credits for any validation samples we redistribute.
     return target
 
 

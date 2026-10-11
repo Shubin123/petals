@@ -1,11 +1,195 @@
 {
+  "abies_concolor": {
+    "common": "White fir",
+    "scientific": "Abies concolor",
+    "family": "Pinaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "White fir is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Flat, pale needles; photograph a short spray with needles attached.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Abies_concolor",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "acer_negundo": {
+    "common": "Box elder",
+    "scientific": "Acer negundo",
+    "family": "Sapindaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Box elder is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Compound leaves, usually with three to seven leaflets.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Acer_negundo",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "acer_palmatum": {
+    "common": "Japanese maple",
+    "scientific": "Acer palmatum",
+    "family": "Sapindaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Japanese maple is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Palm-shaped leaves divided into five to nine pointed lobes.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Acer_palmatum",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "acer_rubrum": {
+    "common": "Red maple",
+    "scientific": "Acer rubrum",
+    "family": "Sapindaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Red maple is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Simple leaves with three to five toothed lobes.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Acer_rubrum",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "aesculus_pavia": {
+    "common": "Red buckeye",
+    "scientific": "Aesculus pavia",
+    "family": "Sapindaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Red buckeye is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Palmately compound leaves, usually with five toothed leaflets.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Aesculus_pavia",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "asimina_triloba": {
+    "common": "Pawpaw",
+    "scientific": "Asimina triloba",
+    "family": "Annonaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Pawpaw is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Large, simple leaves with smooth margins and a broad tip.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Asimina_triloba",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "broussonetia_papyrifera": {
+    "common": "Paper mulberry",
+    "scientific": "Broussonetia papyrifera",
+    "family": "Moraceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Paper mulberry is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Rough, toothed leaves that may be lobed or unlobed.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Broussonetia_papyrifera",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "carya_cordiformis": {
+    "common": "Bitternut hickory",
+    "scientific": "Carya cordiformis",
+    "family": "Juglandaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Bitternut hickory is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Compound leaves with narrow, toothed leaflets.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Carya_cordiformis",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "catalpa_bignonioides": {
+    "common": "Southern catalpa",
+    "scientific": "Catalpa bignonioides",
+    "family": "Bignoniaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Southern catalpa is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Large, heart-shaped leaves with a smooth margin.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Catalpa_bignonioides",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "cercis_canadensis": {
+    "common": "Eastern redbud",
+    "scientific": "Cercis canadensis",
+    "family": "Fabaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Eastern redbud is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Broad heart-shaped leaves with smooth edges.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Cercis_canadensis",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "chionanthus_virginicus": {
+    "common": "White fringetree",
+    "scientific": "Chionanthus virginicus",
+    "family": "Oleaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "White fringetree is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Simple oval leaves with smooth edges.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Chionanthus_virginicus",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "cryptomeria_japonica": {
+    "common": "Japanese cedar",
+    "scientific": "Cryptomeria japonica",
+    "family": "Cupressaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Japanese cedar is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Short, curved, awl-shaped needles around the twig.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Cryptomeria_japonica",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
   "daisy": {
     "common": "Daisy",
     "scientific": "Bellis perennis",
     "family": "Asteraceae",
     "also": "Oxeye daisy (Leucanthemum vulgare) and other white-rayed daisies",
     "description": "A ring of white ray florets around a yellow disc. What looks like one flower is really a head of hundreds of tiny florets. Common in lawns, meadows and roadsides across temperate regions.",
-    "look_for": ["White petals (ray florets) around a flat yellow centre", "Leaves in a rosette at the base", "Flower heads close at night and in dull weather"],
+    "look_for": [
+      "White petals (ray florets) around a flat yellow centre",
+      "Leaves in a rosette at the base",
+      "Flower heads close at night and in dull weather"
+    ],
     "flowering": "Spring to autumn",
     "wiki": "https://en.wikipedia.org/wiki/Bellis_perennis"
   },
@@ -15,9 +199,209 @@
     "family": "Asteraceae",
     "also": "Other Taraxacum species",
     "description": "A bright yellow head made only of strap-shaped florets, followed by the familiar round seed head ('clock'). The stems are hollow and leak a milky sap when broken.",
-    "look_for": ["All-yellow head with no separate centre", "Deeply toothed leaves in a basal rosette", "Leafless hollow stem with milky sap", "Round white seed head"],
+    "look_for": [
+      "All-yellow head with no separate centre",
+      "Deeply toothed leaves in a basal rosette",
+      "Leafless hollow stem with milky sap",
+      "Round white seed head"
+    ],
     "flowering": "Mostly spring, sporadically all year",
     "wiki": "https://en.wikipedia.org/wiki/Taraxacum_officinale"
+  },
+  "diospyros_virginiana": {
+    "common": "American persimmon",
+    "scientific": "Diospyros virginiana",
+    "family": "Ebenaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "American persimmon is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Simple oval leaves with smooth edges and a pointed tip.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Diospyros_virginiana",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "fraxinus_nigra": {
+    "common": "Black ash",
+    "scientific": "Fraxinus nigra",
+    "family": "Oleaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Black ash is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Compound leaves with toothed leaflets; include the whole leaf.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Fraxinus_nigra",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "gleditsia_triacanthos": {
+    "common": "Honey locust",
+    "scientific": "Gleditsia triacanthos",
+    "family": "Fabaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Honey locust is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Compound leaves with many small oval leaflets.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Gleditsia_triacanthos",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "ilex_opaca": {
+    "common": "American holly",
+    "scientific": "Ilex opaca",
+    "family": "Aquifoliaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "American holly is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Thick evergreen leaves, usually with sharp marginal points.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Ilex_opaca",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "juglans_cinerea": {
+    "common": "Butternut",
+    "scientific": "Juglans cinerea",
+    "family": "Juglandaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Butternut is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Compound leaves with many toothed leaflets.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Juglans_cinerea",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "liriodendron_tulipifera": {
+    "common": "Tulip tree",
+    "scientific": "Liriodendron tulipifera",
+    "family": "Magnoliaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Tulip tree is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Four-lobed leaves with a broad, notched tip.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Liriodendron_tulipifera",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "maclura_pomifera": {
+    "common": "Osage orange",
+    "scientific": "Maclura pomifera",
+    "family": "Moraceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Osage orange is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Simple, pointed oval leaves with smooth margins.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Maclura_pomifera",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "ostrya_virginiana": {
+    "common": "American hophornbeam",
+    "scientific": "Ostrya virginiana",
+    "family": "Betulaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "American hophornbeam is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Oval leaves with a pointed tip and doubly toothed edges.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Ostrya_virginiana",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "prunus_sargentii": {
+    "common": "Sargent's cherry",
+    "scientific": "Prunus sargentii",
+    "family": "Rosaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Sargent's cherry is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Simple oval leaves with toothed edges and a pointed tip.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Prunus_sargentii",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "prunus_virginiana": {
+    "common": "Chokecherry",
+    "scientific": "Prunus virginiana",
+    "family": "Rosaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Chokecherry is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Simple, finely toothed oval leaves.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Prunus_virginiana",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "ptelea_trifoliata": {
+    "common": "Common hoptree",
+    "scientific": "Ptelea trifoliata",
+    "family": "Rutaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Common hoptree is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Compound leaves divided into three leaflets.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Ptelea_trifoliata",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "quercus_montana": {
+    "common": "Chestnut oak",
+    "scientific": "Quercus montana",
+    "family": "Fagaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Chestnut oak is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Long leaves with rounded teeth along the margin.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_montana",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "quercus_muehlenbergii": {
+    "common": "Chinkapin oak",
+    "scientific": "Quercus muehlenbergii",
+    "family": "Fagaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Chinkapin oak is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Oblong leaves with coarse teeth along the edge.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_muehlenbergii",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
   },
   "rose": {
     "common": "Rose",
@@ -25,9 +409,44 @@
     "family": "Rosaceae",
     "also": "Garden roses and wild roses such as dog rose (Rosa canina)",
     "description": "Woody shrubs and climbers with prickly stems and compound leaves. Garden roses usually have many layered petals; wild roses have five petals and a ring of stamens.",
-    "look_for": ["Prickles on the stems", "Leaves divided into 5–7 toothed leaflets", "Petals spiralling around the centre", "Red or orange hips after flowering"],
+    "look_for": [
+      "Prickles on the stems",
+      "Leaves divided into 5\u20137 toothed leaflets",
+      "Petals spiralling around the centre",
+      "Red or orange hips after flowering"
+    ],
     "flowering": "Late spring to autumn",
     "wiki": "https://en.wikipedia.org/wiki/Rose"
+  },
+  "staphylea_trifolia": {
+    "common": "American bladdernut",
+    "scientific": "Staphylea trifolia",
+    "family": "Staphyleaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "American bladdernut is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Compound leaves with three toothed leaflets.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Staphylea_trifolia",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "styrax_japonica": {
+    "common": "Japanese snowbell",
+    "scientific": "Styrax japonica",
+    "family": "Styracaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Japanese snowbell is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Simple oval leaves with pointed tips and finely toothed edges.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Styrax_japonica",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
   },
   "sunflower": {
     "common": "Sunflower",
@@ -35,7 +454,11 @@
     "family": "Asteraceae",
     "also": "Ornamental and crop sunflowers",
     "description": "A tall annual with a single large head: yellow ray florets around a wide brown or purple disc whose florets spiral outward in Fibonacci patterns. Young heads follow the sun across the sky.",
-    "look_for": ["Very large head, often wider than a hand", "Dark central disc much wider than in a daisy", "Rough, hairy stem and broad heart-shaped leaves"],
+    "look_for": [
+      "Very large head, often wider than a hand",
+      "Dark central disc much wider than in a daisy",
+      "Rough, hairy stem and broad heart-shaped leaves"
+    ],
     "flowering": "Summer to early autumn",
     "wiki": "https://en.wikipedia.org/wiki/Common_sunflower"
   },
@@ -45,8 +468,57 @@
     "family": "Liliaceae",
     "also": "Garden tulip cultivars (Tulipa gesneriana) and wild tulips",
     "description": "Spring bulbs with a cup-shaped flower of six tepals on a single upright stem. Garden cultivars come in nearly every colour except true blue.",
-    "look_for": ["Cup or goblet-shaped flower with six tepals", "One flower per smooth stem", "Two to four broad, bluish-green leaves at the base"],
+    "look_for": [
+      "Cup or goblet-shaped flower with six tepals",
+      "One flower per smooth stem",
+      "Two to four broad, bluish-green leaves at the base"
+    ],
     "flowering": "Spring",
     "wiki": "https://en.wikipedia.org/wiki/Tulip"
+  },
+  "ulmus_americana": {
+    "common": "American elm",
+    "scientific": "Ulmus americana",
+    "family": "Ulmaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "American elm is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Leaves with an uneven base and doubly toothed edges.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Ulmus_americana",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "ulmus_pumila": {
+    "common": "Siberian elm",
+    "scientific": "Ulmus pumila",
+    "family": "Ulmaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Siberian elm is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Small oval leaves with toothed edges.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Ulmus_pumila",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "ulmus_rubra": {
+    "common": "Slippery elm",
+    "scientific": "Ulmus rubra",
+    "family": "Ulmaceae",
+    "also": "LeafSnap30 species label; related species are not covered by this label.",
+    "description": "Slippery elm is one of the woody plants in the LeafSnap30 training data. Identification uses close-up leaf photos, not flowers, bark, or a whole-tree view.",
+    "look_for": [
+      "Rough leaves with an uneven base and doubly toothed edges.",
+      "Photograph one leaf or a short needle-bearing twig against a plain, light background.",
+      "For compound leaves, include the leaflets and the main leaf stalk."
+    ],
+    "flowering": "This model identifies leaves; flowering is not used.",
+    "wiki": "https://en.wikipedia.org/wiki/Ulmus_rubra",
+    "source": "https://doi.org/10.5281/zenodo.5061353"
   }
 }

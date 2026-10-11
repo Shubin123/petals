@@ -1,0 +1,11 @@
+This dataset is a modified subset (see the redme file for details) from the LeafSnap (http://leafsnap.com/dataset/) dataset. 
+The authors of LeafSnap have released the original dataset "To promote further research in leaf recognition". 
+They ask "If you use this dataset, please cite the following paper:
+"Leafsnap: A Computer Vision System for Automatic Plant Species Identification,"
+Neeraj Kumar, Peter N. Belhumeur, Arijit Biswas, David W. Jacobs, W. John Kress, Ida C. Lopez, João V. B. Soares,
+Proceedings of the 12th European Conference on Computer Vision (ECCV),
+October 2012"
+
+Our work is licensed under the Creative Commons Attribution 4.0 International License. 
+To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to 
+Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.

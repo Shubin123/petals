@@ -404,7 +404,7 @@ async function renderResult() {
       <dt>Flowering</dt><dd>${esc(sp.flowering)}</dd>
       <dt>Photos</dt><dd>${photos.length}</dd>
     </dl>
-    ${confident ? "" : `<p class="caveat">The model isn't sure. Try a closer, well-lit photo of the flower head, or add more photos. If the plant isn't a daisy, dandelion, rose, sunflower or tulip, Petals can't name it.</p>`}
+    ${confident ? "" : `<p class="caveat">The model isn't sure. Try a closer, well-lit photo of a flower or a single leaf against a plain background. Petals can only name plants listed on the Species page.</p>`}
     <div class="slip-foot"><a href="#/species/${top.id}">About ${esc(sp.common.toLowerCase())}s</a><a href="${sp.wiki}" target="_blank" rel="noopener">Wikipedia</a></div>`;
 
   view.querySelector("#bars").replaceChildren(...results.map((r) => {
@@ -445,7 +445,7 @@ async function renderSpeciesList() {
   view.replaceChildren(el(`<section>
     <div class="page-head">
       <h1>Species</h1>
-      <p>The five flowers Petals has been trained to recognise.</p>
+      <p>${Object.keys(species).length} plant classes: flowers and trees identified from leaves.</p>
     </div>
     <ul class="flora">${Object.values(species).map((s) => `
       <li><a href="#/species/${s.id}">
@@ -501,8 +501,8 @@ async function renderObservations() {
   const log = section.querySelector(".log");
   if (!obs.length) {
     log.replaceWith(el(`<div class="empty-state">
-      <p>No observations yet. Identify a flower and save it to start your log.</p>
-      <a class="btn primary" href="#/">Identify a flower</a>
+      <p>No observations yet. Identify a plant and save it to start your log.</p>
+      <a class="btn primary" href="#/">Identify a plant</a>
     </div>`));
   }
   for (const o of obs) {
@@ -537,7 +537,7 @@ async function renderHow() {
     <section>
       <div class="page-head">
         <h1>How it works</h1>
-        <p>Petals is a convolutional neural network that looks at your photo and scores how much it resembles each of five flowers.</p>
+        <p>Petals is a convolutional neural network that looks at your photo and scores how much it resembles each of ${status.labels?.length ?? Object.keys(species).length} supported plant classes. A high score is a match among these classes, not proof of identity.</p>
       </div>
       ${status.ready ? `<div class="stats">
         <div><strong>${pct(status.val_accuracy)}</strong><span>accuracy on held-out photos</span></div>
@@ -549,25 +549,25 @@ async function renderHow() {
     <section>
       <h2>The model</h2>
       <ol class="steps">
-        <li>Your photo is resized to 180 × 180 pixels.</li>
-        <li>An <strong>InceptionResNetV2</strong> network, pretrained on ImageNet's 1.2 million photos, turns it into a set of visual features: petal shapes, colours, textures.</li>
-        <li>A small classification layer turns those features into a score for each of the five flowers.</li>
+        <li>Your photo is resized to ${status.image_size?.join(" × ") ?? "180 × 180"} pixels.</li>
+        <li>An <strong>${esc(status.architecture ?? "InceptionResNetV2")}</strong> network, pretrained on ImageNet's 1.2 million photos, turns it into a set of visual features: leaf and flower shapes, colours, textures.</li>
+        <li>A small classification layer turns those features into a score for each supported plant class.</li>
         <li>With several photos of the same plant, the scores are averaged.</li>
       </ol>
       <div class="prose">
-        <p>${status.frozen_base
-          ? "The pretrained network was kept as it is, and only the classification layer was trained on the TensorFlow Flowers dataset."
-          : status.hyperparameters?.fine_tune_after
-            ? "The classification layer was trained first with the pretrained network kept as it is. Then the top blocks of the network were fine-tuned along with it on the TensorFlow Flowers dataset, at a lower learning rate."
-            : "The whole network was fine-tuned on the TensorFlow Flowers dataset."} The learning rate warms up for eight epochs, then decays exponentially. Training stops early when validation loss stops improving. This follows the approach in <a href="https://www.kaggle.com/code/nikhilmishra21/flowers-notebook-cnn" target="_blank" rel="noopener">Flowers Notebook – CNN</a>.</p>
+        <p>${status.architecture === "MobileNetV2"
+          ? "The pretrained MobileNetV2 network is frozen. A new classification layer was trained on original and augmented photos from TensorFlow Flowers and LeafSnap30. Early stopping selects the model using a validation split; a separate test split measures performance after training. LeafSnap30 includes cropped lab leaves and field leaves, mostly photographed individually against a plain background. Whole trees, bark, and arbitrary plants are outside this model's tested coverage."
+          : "The InceptionResNetV2 classifier was trained on TensorFlow Flowers using transfer learning."}</p>
+        ${status.test_accuracy != null ? `<p>Separate test accuracy: <strong>${pct(status.test_accuracy)}</strong> on ${status.test_images.toLocaleString()} photos. ${Object.entries(status.test_by_source ?? {}).map(([source, result]) => `${esc(source.replaceAll("_", " "))}: ${pct(result.accuracy)} (${result.images} photos)`).join("; ")}.</p>` : ""}
+        <p>Data credits: <a href="https://www.tensorflow.org/datasets/catalog/tf_flowers" target="_blank" rel="noopener">TensorFlow Flowers</a> (CC BY 2.0); <a href="https://doi.org/10.5281/zenodo.5061353" target="_blank" rel="noopener">LeafSnap30</a> by Ranguelova, Meijer, Oostrum, Liu and Bos (CC BY 4.0), derived from <a href="https://leafsnap.com/dataset/" target="_blank" rel="noopener">Leafsnap</a>, Kumar et al., ECCV 2012. Sample photographs retain dataset attribution in <a href="samples/credits.json">photo credits</a>.</p>
       </div>
     </section>
 
     <section>
       <h2>Data augmentation</h2>
       <div class="prose">
-        <p>A few thousand photos isn't much for a network this size. To stop it memorising them, every training photo is randomly altered each time the model sees it, so it learns what makes a tulip a tulip rather than what one particular photo looks like. The three transformations come from Kaggle Learn's <a href="https://www.kaggle.com/code/ryanholbrook/exercise-data-augmentation" target="_blank" rel="noopener">Data Augmentation exercise</a>:</p>
-        <p><strong>Contrast</strong> varies by up to ±10%. <strong>Horizontal flip</strong> happens half the time, because a flower facing left is still the same flower. <strong>Rotation</strong> goes up to ±36°, since stems lean in every direction. Vertical flips are left out: flowers in photos almost always face up.</p>
+        <p>A few thousand photos isn't much for a network this size. To stop it memorising them, training photos are augmented, so it learns what makes a tulip a tulip rather than what one particular photo looks like. The three transformations come from Kaggle Learn's <a href="https://www.kaggle.com/code/ryanholbrook/exercise-data-augmentation" target="_blank" rel="noopener">Data Augmentation exercise</a>:</p>
+        <p><strong>Contrast</strong> varies by up to ±10%. <strong>Horizontal flip</strong> happens half the time. <strong>Rotation</strong> goes up to ±36°. These variations help the classifier recognise leaves and flowers under different lighting and orientations.</p>
         <p>Below are eight versions of one photo, made with the same transformations used in training. ${state.photos[0] ? "It's the photo you chose on the Identify page." : "Choose your own photo to try it."}</p>
       </div>
       <div class="aug-controls">
@@ -742,7 +742,7 @@ function drawChart(wrap, history) {
 /* ---------- Router ---------- */
 
 function renderNotFound() {
-  view.replaceChildren(el(`<div class="empty-state"><h1>Page not found</h1><a class="btn primary" href="#/">Identify a flower</a></div>`));
+  view.replaceChildren(el(`<div class="empty-state"><h1>Page not found</h1><a class="btn primary" href="#/">Identify a plant</a></div>`));
 }
 
 async function route() {

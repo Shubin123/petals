@@ -50,12 +50,15 @@ def inference_model(trained: keras.Model) -> keras.Model:
     return model
 
 
-def quantize_like_tfjs(model: keras.Model) -> keras.Model:
-    """Apply the same per-tensor uint8 affine quantization tfjs uses, to measure its accuracy cost."""
+def quantize_like_tfjs(model: keras.Model, dtype="uint8") -> keras.Model:
+    """Measure float16 or per-tensor uint8 weight storage error before browser export."""
     q = keras.models.clone_model(model)
     q.set_weights(model.get_weights())
     for var in q.weights:
         w = var.numpy()
+        if dtype == "float16":
+            var.assign(w.astype(np.float16).astype(w.dtype))
+            continue
         if w.dtype != np.float32 or w.size < 2:
             continue
         lo, hi = float(w.min()), float(w.max())
@@ -68,19 +71,39 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=pathlib.Path, default=ROOT / "site")
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--model-dir", type=pathlib.Path, default=ROOT / "models")
+    parser.add_argument("--manifest", type=pathlib.Path,
+                        help="prepared plant manifest for validation of the expanded model")
+    parser.add_argument("--quantization", choices=("uint8", "float16"),
+                        help="default: float16 for MobileNetV2, uint8 for the original model")
     args = parser.parse_args()
 
-    trained = keras.models.load_model(ROOT / "models" / "petals.keras")
-    meta = json.loads((ROOT / "models" / "metadata.json").read_text())
+    trained = keras.models.load_model(args.model_dir / "petals.keras")
+    meta = json.loads((args.model_dir / "metadata.json").read_text())
     model = inference_model(trained)
+    quantization = args.quantization or ("float16" if meta.get("architecture") == "MobileNetV2" else "uint8")
+    meta["quantization"] = quantization
 
     if args.check:
-        val = keras.utils.image_dataset_from_directory(
-            ROOT / "data" / "flower_photos", validation_split=0.2, subset="validation",
-            seed=1337, image_size=IMAGE_SIZE, batch_size=32)
-        for name, m in (("float32", model), ("uint8", quantize_like_tfjs(model))):
+        if meta.get("architecture") == "MobileNetV2" and not args.manifest:
+            parser.error("Expanded plant validation requires --manifest data/plants/manifest.json")
+        if args.manifest:
+            from train_plants import dataset
+            manifest = json.loads(args.manifest.read_text())
+            if manifest["labels"] != meta["labels"]:
+                raise ValueError("Validation labels do not match the model")
+            val = dataset([r for r in manifest["images"] if r["split"] == "validation"], 32)
+        else:
+            val = keras.utils.image_dataset_from_directory(
+                ROOT / "data" / "flower_photos", validation_split=0.2, subset="validation",
+                seed=1337, image_size=IMAGE_SIZE, batch_size=32)
+        for name, m in (("float32", model), (quantization, quantize_like_tfjs(model, quantization))):
             m.compile(loss="sparse_categorical_crossentropy", metrics=["accuracy"])
-            print(f"{name} validation accuracy: {m.evaluate(val, verbose=0)[1]:.4f}")
+            accuracy = float(m.evaluate(val, verbose=0)[1])
+            print(f"{name} validation accuracy: {accuracy:.4f}")
+            meta[f"{name}_val_accuracy"] = accuracy
+            if name != "float32" and accuracy < meta["float32_val_accuracy"] - 0.02:
+                raise ValueError(f"{name} compression loses more than two accuracy points; refusing export")
 
     if args.out.exists():
         shutil.rmtree(args.out)
@@ -88,11 +111,14 @@ def main():
 
     with tempfile.TemporaryDirectory() as tmp:
         model.export(tmp, format="tf_saved_model", verbose=False)
-        tfjs.convert_tf_saved_model(tmp, str(args.out / "model"), quantization_dtype_map={"uint8": True})
+        tfjs.convert_tf_saved_model(tmp, str(args.out / "model"), quantization_dtype_map={quantization: True})
 
     (args.out / "model" / "metadata.json").write_text(json.dumps(meta))
+    if args.check:
+        (args.model_dir / "metadata.json").write_text(json.dumps(meta, indent=2))
 
     species = json.loads((ROOT / "app" / "species.json").read_text())
+    species = {sid: species[sid] for sid in meta["labels"]}
     for sid, info in species.items():
         info["id"] = sid
         info["samples"] = sorted(f"samples/{p.name}" for p in (STATIC / "samples").glob(f"{sid}-*.jpg"))

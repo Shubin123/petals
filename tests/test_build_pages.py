@@ -44,6 +44,16 @@ def test_inference_model_matches_trained(trained, images):
     np.testing.assert_allclose(got.sum(axis=1), 1, atol=1e-5)
 
 
+def test_expanded_mobilenet_conversion_preserves_scores(images):
+    from train_plants import build_plant_model
+
+    trained = build_plant_model(35, weights=None)
+    converted = build_pages.inference_model(trained)
+    assert converted.output_shape == (None, 35)
+    np.testing.assert_allclose(converted(images, training=False).numpy(),
+                               trained(images, training=False).numpy(), atol=1e-6)
+
+
 def test_quantize_like_tfjs(trained, images):
     model = build_pages.inference_model(trained)
     q = build_pages.quantize_like_tfjs(model)
