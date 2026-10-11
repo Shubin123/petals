@@ -232,6 +232,12 @@ main:focus { outline: none; }
 }
 
 .identify-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.identify-loading { margin-top: 1rem; }
+.identify-loading p { margin: 0 0 0.5rem; color: var(--muted); }
+.identify-progress { height: 6px; overflow: hidden; border-radius: 3px; background: var(--line, #d9ddd4); }
+.identify-progress span { display: block; width: 35%; height: 100%; background: var(--ink); animation: identify-progress 1.2s ease-in-out infinite alternate; }
+@keyframes identify-progress { from { transform: translateX(-100%); } to { transform: translateX(286%); } }
+@media (prefers-reduced-motion: reduce) { .identify-progress span { animation: none; width: 100%; opacity: 0.6; } }
 .error { color: var(--danger); font-weight: 500; }
 .error:empty { display: none; }
 

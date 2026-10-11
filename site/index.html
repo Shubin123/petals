@@ -95,6 +95,12 @@
         <button class="btn quiet" type="button" data-paste>Paste image</button>
         <button class="btn quiet" id="clear" type="button">Clear</button>
       </div>
+      <div class="identify-loading" id="identify-loading" hidden>
+        <p role="status">Identifying your plant…</p>
+        <div class="identify-progress" role="progressbar" aria-label="Identifying your plant">
+          <span></span>
+        </div>
+      </div>
       <p class="error" id="error" role="alert"></p>
     </section>
   </template>

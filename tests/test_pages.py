@@ -257,6 +257,76 @@ def test_unreadable_image_shows_error(page):
     assert page.locator("#go").is_enabled()
 
 
+@pytest.mark.parametrize("fail", [False, True])
+def test_identify_loading_bar_and_cleanup(page, fail):
+    page.set_input_files("#file", SITE / SPECIES["acer_rubrum"]["samples"][0])
+    page.evaluate("""async () => {
+        const {backend} = await import('./app.js');
+        window.originalIdentify = backend.identify.bind(backend);
+        backend.identify = () => new Promise((resolve, reject) => {
+            window.finishIdentify = resolve; window.failIdentify = reject;
+        });
+    }""")
+    try:
+        page.click("#go")
+        assert page.locator("#identify-loading").is_visible()
+        assert page.get_by_role("progressbar", name="Identifying your plant").is_visible()
+        assert page.locator("#view").get_attribute("aria-busy") == "true"
+        if fail:
+            page.evaluate("window.failIdentify(new Error('Please try again'))")
+            page.wait_for_selector("#error:has-text('Please try again')")
+            assert page.locator("#identify-loading").is_hidden()
+            assert page.locator("#go").is_enabled()
+        else:
+            page.evaluate("""async () => {
+                const blob = await (await fetch('samples/acer_rubrum-0.jpg')).blob();
+                window.finishIdentify(await window.originalIdentify([new File([blob], 'leaf.jpg', {type:'image/jpeg'})]));
+            }""")
+            page.wait_for_selector(".slip-name")
+            assert page.locator(".slip-name").inner_text() == "Acer rubrum"
+            assert page.locator("#identify-loading").count() == 0
+        assert page.locator("#view").get_attribute("aria-busy") is None
+    finally:
+        page.evaluate("""async () => { const {backend} = await import('./app.js'); backend.identify = window.originalIdentify; }""")
+
+
+def test_browser_image_drop_identifies_leaf(page, site_url):
+    if page.locator("#clear").is_visible():
+        page.click("#clear")
+    source = page.context.new_page()
+    source.goto(site_url + "samples/acer_rubrum-0.jpg")
+    image_url = source.locator("img").get_attribute("src")
+    source.close()
+    page.bring_to_front()
+    page.locator("h1").scroll_into_view_if_needed()
+    session = page.context.new_cdp_session(page)
+    bounds = page.locator("h1").bounding_box()  # Also accepts a drop outside the sheet.
+    payload = {"items": [{"mimeType": "text/uri-list", "data": image_url},
+                         {"mimeType": "text/html", "data": f'<img src="{image_url}">'}],
+               "dragOperationsMask": 1}
+    for event in ("dragEnter", "dragOver", "drop"):
+        session.send("Input.dispatchDragEvent", {"type": event, "x": bounds["x"] + 10,
+                                                "y": bounds["y"] + 10, "data": payload})
+    session.detach()
+    page.wait_for_selector("#thumbs li img")
+    page.click("#go")
+    page.wait_for_selector(".slip-name", timeout=120_000)
+    assert page.locator(".slip-name").inner_text() == "Acer rubrum"
+
+
+def test_blocked_browser_image_drop_shows_paste_fallback(page):
+    page.route("https://blocked-photo.example/leaf.jpg", lambda route: route.abort())
+    try:
+        page.evaluate("""() => {
+            const data = new DataTransfer();
+            data.setData('text/uri-list', 'https://blocked-photo.example/leaf.jpg');
+            document.querySelector('#drop').dispatchEvent(new DragEvent('drop', {bubbles:true, cancelable:true, dataTransfer:data}));
+        }""")
+        page.wait_for_selector("#error:has-text('Use Copy image and Paste image')")
+    finally:
+        page.unroute("https://blocked-photo.example/leaf.jpg")
+
+
 @pytest.fixture(scope="module")
 def camera_browser(playwright, tmp_path_factory, browser_type_launch_args):
     """Feed a real sample flower through Chromium's camera and the normal frame pipeline."""

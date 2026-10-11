@@ -5,6 +5,7 @@ Petals identifies **35 plant classes** from photos or a live camera: the origina
 The tree coverage includes maples, elms, oaks, white fir, holly, pawpaw, redbud, honey locust, and Japanese cedar. Browse **Species** for the complete list. Flower classes such as rose and tulip cover groups of species; they do not determine an individual botanical species or cultivar.
 
 - **Identify**: use the always-on live camera, or drop/select up to five photos of the same plant. To paste, copy the image itself (not its address), then click **Paste image** or press **⌘V / Ctrl+V** on the Identify page. The paste button requests clipboard access when required. Scores are averaged; matches below 60% are undetermined.
+  Identification shows an animated loading bar while the model runs. Images dragged from browser tabs are downloaded when the source website allows it; blocked sources show instructions to use Copy image → Paste image. File drops are accepted across the Identify page.
 - **Species**: leaf/flower guidance and credited validation photos for each supported class.
 - **My observations**: save photos with a place and notes, using IndexedDB on Pages or SQLite with the optional server.
 - **How it works**: model coverage, validation/test results, data credits, training curve, and an interactive augmentation demo.

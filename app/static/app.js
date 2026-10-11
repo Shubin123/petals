@@ -178,6 +178,7 @@ function renderIdentify() {
   const thumbs = view.querySelector("#thumbs");
   const actions = view.querySelector("#identify-actions");
   const error = view.querySelector("#error");
+  const dropRequest = new AbortController();
   const go = view.querySelector("#go");
   const liveSwitch = view.querySelector("#live-camera");
   const livePanel = view.querySelector("#live-panel");
@@ -304,7 +305,13 @@ function renderIdentify() {
     state.photos = [photo];
     showResult(data, state.photos);
   };
-  disposeIdentify = () => { stopLive(); document.removeEventListener("paste", onPaste); };
+  disposeIdentify = () => {
+    stopLive();
+    dropRequest.abort();
+    document.removeEventListener("paste", onPaste);
+    document.removeEventListener("dragover", onDragOver);
+    document.removeEventListener("drop", onDrop);
+  };
 
   const refresh = () => {
     thumbs.replaceChildren(...state.photos.map((f, i) => {
@@ -321,7 +328,14 @@ function renderIdentify() {
   const add = (files) => {
     if (liveSession) return;
     error.textContent = "";
-    const images = [...files].filter((f) => f.type.startsWith("image/"));
+    const images = [...files].map((f) => {
+      if (f.type.startsWith("image/")) return f;
+      if (f.type) return null;
+      const extension = f.name.split(".").pop().toLowerCase();
+      const type = { jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp",
+                     gif: "image/gif", bmp: "image/bmp", avif: "image/avif" }[extension];
+      return type ? new File([f], f.name, { type, lastModified: f.lastModified }) : null;
+    }).filter(Boolean);
     if (images.length < files.length) error.textContent = "Only image files can be added.";
     const room = MAX_PHOTOS - state.photos.length;
     if (images.length > room) error.textContent = `Use up to ${MAX_PHOTOS} photos of the same plant.`;
@@ -334,9 +348,52 @@ function renderIdentify() {
   view.querySelector("#clear").onclick = () => { state.photos = []; error.textContent = ""; refresh(); };
   file.onchange = camera.onchange = (e) => { add(e.target.files); e.target.value = ""; };
 
-  drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });
-  drop.addEventListener("dragleave", () => drop.classList.remove("over"));
-  drop.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("over"); add(e.dataTransfer.files); });
+  const onDragOver = (e) => {
+    e.preventDefault();
+    if (e.dataTransfer) e.dataTransfer.dropEffect = "copy";
+    if (!liveSession) drop.classList.add("over");
+  };
+  drop.addEventListener("dragleave", (e) => {
+    if (!drop.contains(e.relatedTarget)) drop.classList.remove("over");
+  });
+  const onDrop = async (e) => {
+    e.preventDefault();
+    drop.classList.remove("over");
+    if (liveSession) return;
+    const data = e.dataTransfer;
+    if (!data) return;
+    // Read the protected drag payload before the first await.
+    const files = [...data.files];
+    if (!files.length) files.push(...[...data.items].filter((item) => item.kind === "file")
+      .map((item) => item.getAsFile()).filter(Boolean));
+    if (files.length) { add(files); return; }
+    const html = new DOMParser().parseFromString(data.getData("text/html"), "text/html");
+    const image = html.querySelector("img");
+    const uri = data.getData("text/uri-list").split(/\r?\n/).find((line) => line && !line.startsWith("#"));
+    const source = image?.getAttribute("src") || uri;
+    if (!source) {
+      error.textContent = "Drop an image file, or use Copy image and Paste image.";
+      return;
+    }
+    try {
+      const url = new URL(source, location.href);
+      if (!["https:", "http:", "blob:"].includes(url.protocol) && !/^data:image\//i.test(url.href)) {
+        throw new Error("Unsupported image address");
+      }
+      error.textContent = "Loading dropped image…";
+      const response = await fetch(url, { signal: dropRequest.signal, credentials: "omit" });
+      if (!response.ok) throw new Error("Image download failed");
+      const blob = await response.blob();
+      if (!blob.type.startsWith("image/")) throw new Error("Not an image");
+      if (go.isConnected && !liveSession) add([new File([blob], "dropped-image", { type: blob.type })]);
+    } catch (err) {
+      if (err.name !== "AbortError" && go.isConnected) {
+        error.textContent = "That website doesn't allow its image to be loaded here. Use Copy image and Paste image, or save it and drop the image file.";
+      }
+    }
+  };
+  document.addEventListener("dragover", onDragOver);
+  document.addEventListener("drop", onDrop);
   const onPaste = (e) => {
     if (liveSession || e.target.closest?.("input, textarea, [contenteditable]")) return;
     const data = e.clipboardData;
@@ -378,6 +435,9 @@ function renderIdentify() {
 
   go.onclick = async () => {
     error.textContent = "";
+    const loading = view.querySelector("#identify-loading");
+    loading.hidden = false;
+    view.setAttribute("aria-busy", "true");
     go.disabled = true;
     liveSwitch.disabled = true;
     go.textContent = "Identifying…";
@@ -392,6 +452,11 @@ function renderIdentify() {
       go.disabled = false;
       liveSwitch.disabled = false;
       go.textContent = "Identify";
+    } finally {
+      if (go.isConnected) {
+        loading.hidden = true;
+        view.removeAttribute("aria-busy");
+      }
     }
   };
 
@@ -784,6 +849,7 @@ function renderNotFound() {
 
 async function route() {
   disposeIdentify();
+  view.removeAttribute("aria-busy");
   disposeIdentify = () => {};
   const [, page = "", arg] = location.hash.split("/");
   const nav = { "": "identify", result: "identify", species: "species", observations: "observations", how: "how" }[page];
