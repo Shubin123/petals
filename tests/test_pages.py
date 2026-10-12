@@ -54,6 +54,8 @@ def site(browser, site_url):
 def page(site, site_url):
     site.goto(site_url + "#/")
     site.wait_for_selector("#drop")
+    if site.locator("#clear").is_visible():
+        site.click("#clear")
     yield site
     assert not site.errors, site.errors
     assert not [u for u in site.requests if "/api/" in u], "static build called the server API"
@@ -182,6 +184,26 @@ def test_tree_leaf_identification_and_observation(page, site_url):
     page.once("dialog", lambda d: d.accept())
     page.locator(".log li button:has-text('Delete')").click()
     page.wait_for_selector(".empty-state")
+
+
+def test_new_oxford_flower_photo_in_browser(page):
+    manifest_path = ROOT / "data/flowers102/manifest.json"
+    score_path = ROOT / "models/flowers/validation_scores.npy"
+    if not manifest_path.exists() or not score_path.exists() or "hibiscus" not in LABELS:
+        pytest.skip("Oxford training photos are local and not redistributed")
+    import numpy as np
+    manifest = json.loads(manifest_path.read_text())
+    rows = [r for r in manifest["images"] if r["split"] == "validation"]
+    scores = np.load(score_path)
+    label = manifest["labels"].index("hibiscus")
+    candidates = [i for i, r in enumerate(rows) if r["id"] == "hibiscus"]
+    best = max(candidates, key=lambda i: scores[i, label])
+    if page.locator("#clear").is_visible():
+        page.click("#clear")
+    page.set_input_files("#file", ROOT / rows[best]["path"])
+    page.click("#go")
+    page.wait_for_selector(".slip-name", timeout=120_000)
+    assert page.locator(".slip-name").inner_text() == "Hibiscus (flower category)"
 
 
 def test_rejects_non_image(page):

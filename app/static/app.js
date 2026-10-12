@@ -46,11 +46,11 @@ const browser = {
   model: null,
 
   async species() {
-    return api("species.json");
+    return api("species.json", { cache: "no-store" });
   },
 
   async status() {
-    this.meta ??= await api("model/metadata.json");
+    this.meta ??= await api("model/metadata.json", { cache: "no-store" });
     return { ...this.meta, ready: true, confident_threshold: CONFIDENT };
   },
 
@@ -63,7 +63,8 @@ const browser = {
       });
     }
     await this.status();
-    this.model ??= await tf.loadGraphModel("model/model.json");
+    const version = this.meta.model_version ? `?v=${encodeURIComponent(this.meta.model_version)}` : "";
+    this.model ??= await tf.loadGraphModel(`model/model.json${version}`);
     return this.model;
   },
 
@@ -583,7 +584,9 @@ async function renderSpecies(id) {
       </div>
       <div class="sheet gallery">${s.samples.length
         ? s.samples.map((u) => `<img src="${u}" alt="${esc(s.common)} from the training set" loading="lazy">`).join("")
-        : `<p class="empty">Sample photos appear here after the model is trained.</p>`}
+        : s.example_url
+          ? `<p class="empty"><a href="${esc(s.example_url)}" target="_blank" rel="noopener">View the original dataset example</a>. Photos from this dataset are not bundled with Petals.</p>`
+          : `<p class="empty">Sample photos appear here after the model is trained.</p>`}
       </div>
     </div>
   </section>`));
@@ -658,10 +661,11 @@ async function renderHow() {
       </ol>
       <div class="prose">
         <p>${status.architecture === "MobileNetV2"
-          ? "The pretrained MobileNetV2 network is frozen. A new classification layer was trained on original and augmented photos from TensorFlow Flowers and LeafSnap30. Early stopping selects the model using a validation split; a separate test split measures performance after training. LeafSnap30 includes cropped lab leaves and field leaves, mostly photographed individually against a plain background. Whole trees, bark, and arbitrary plants are outside this model's tested coverage."
+          ? `The pretrained MobileNetV2 network is frozen. A new classification layer was trained on original and augmented photos from ${esc((status.sources ?? []).map(source => source.name).join(", ") || "TensorFlow Flowers and LeafSnap30")}. Early stopping selects the model using a validation split; a separate test split measures performance after training. Tree recognition uses single leaves, mostly against plain backgrounds. Flower matches can represent dataset categories, cultivars or groups, rather than an exact botanical species. Whole trees, bark, and arbitrary plants are outside this model's tested coverage.`
           : "The InceptionResNetV2 classifier was trained on TensorFlow Flowers using transfer learning."}</p>
         ${status.test_accuracy != null ? `<p>Separate test accuracy: <strong>${pct(status.test_accuracy)}</strong> on ${status.test_images.toLocaleString()} photos. ${Object.entries(status.test_by_source ?? {}).map(([source, result]) => `${esc(source.replaceAll("_", " "))}: ${pct(result.accuracy)} (${result.images} photos)`).join("; ")}.</p>` : ""}
         <p>Data credits: <a href="https://www.tensorflow.org/datasets/catalog/tf_flowers" target="_blank" rel="noopener">TensorFlow Flowers</a> (CC BY 2.0); <a href="https://doi.org/10.5281/zenodo.5061353" target="_blank" rel="noopener">LeafSnap30</a> by Ranguelova, Meijer, Oostrum, Liu and Bos (CC BY 4.0), derived from <a href="https://leafsnap.com/dataset/" target="_blank" rel="noopener">Leafsnap</a>, Kumar et al., ECCV 2012. Sample photographs retain dataset attribution in <a href="samples/credits.json">photo credits</a>.</p>
+        ${status.sources?.some(source => source.name === "Oxford Flowers 102") ? `<p>Additional flower training: <a href="https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html" target="_blank" rel="noopener">Oxford Flowers 102</a>, Maria-Elena Nilsback and Andrew Zisserman, ICVGIP 2008. We use a custom split, not the published benchmark split. Its original release does not specify an image redistribution license, so the new guides link to dataset examples and these photos are not bundled here.</p>` : ""}
       </div>
     </section>
 

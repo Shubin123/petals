@@ -9,7 +9,7 @@
   },
   "abies_concolor-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/abies_concolor/12995309746566.jpg",
+    "original": "dataset/images/field/abies_concolor/12995309749691.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -49,7 +49,7 @@
   },
   "acer_rubrum-0.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/acer_rubrum/13001155908147.jpg",
+    "original": "dataset/images/field/acer_rubrum/13001155900305.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -57,7 +57,7 @@
   },
   "acer_rubrum-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/acer_rubrum/13001155900305.jpg",
+    "original": "dataset/images/field/acer_rubrum/13001155905684.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -73,7 +73,7 @@
   },
   "aesculus_pavia-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/aesculus_pavi/13291655552212.jpg",
+    "original": "dataset/images/field/aesculus_pavi/13291655552670.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -89,7 +89,7 @@
   },
   "asimina_triloba-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/asimina_triloba/13001240192025.jpg",
+    "original": "dataset/images/field/asimina_triloba/13001240197770.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -105,7 +105,7 @@
   },
   "broussonetia_papyrifera-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/broussonettia_papyrifera/13001252078895.jpg",
+    "original": "dataset/images/field/broussonettia_papyrifera/13001252070853.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -129,7 +129,7 @@
   },
   "catalpa_bignonioides-0.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/catalpa_bignonioides/13001269154861.jpg",
+    "original": "dataset/images/field/catalpa_bignonioides/13001269152453.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -137,7 +137,7 @@
   },
   "catalpa_bignonioides-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/catalpa_bignonioides/13001269152453.jpg",
+    "original": "dataset/images/field/catalpa_bignonioides/13001269154861.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -145,7 +145,7 @@
   },
   "cercis_canadensis-0.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/cercis_canadensis/12991999011882.jpg",
+    "original": "dataset/images/field/cercis_canadensis/12991999250392.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -169,7 +169,7 @@
   },
   "chionanthus_virginicus-1.jpg": {
     "dataset": "leafsnap_lab",
-    "original": "dataset/images/lab/chionanthus_virginicus/pi0034-06-4.jpg",
+    "original": "dataset/images/lab/chionanthus_virginicus/pi2215-03-1.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -177,7 +177,7 @@
   },
   "cryptomeria_japonica-0.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/cryptomeria_japonica/13001326978478.jpg",
+    "original": "dataset/images/field/cryptomeria_japonica/13001326977407.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -185,7 +185,7 @@
   },
   "cryptomeria_japonica-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/cryptomeria_japonica/13001917800676.jpg",
+    "original": "dataset/images/field/cryptomeria_japonica/13001917802984.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -193,10 +193,10 @@
   },
   "daisy-0.jpg": {
     "dataset": "tf_flowers",
-    "original": "daisy/5973488341_50bdf6cee3_n.jpg",
+    "original": "daisy/2627815904_919373e7f5.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
-    "attribution": "daisy/5973488341_50bdf6cee3_n.jpg CC-BY by Catrin Austin - https://www.flickr.com/photos/catrinaustin/5973488341/",
+    "attribution": "daisy/2627815904_919373e7f5.jpg CC-BY by Sharon Mollerus - https://www.flickr.com/photos/clairity/2627815904/",
     "license": "CC BY 2.0"
   },
   "daisy-1.jpg": {
@@ -209,18 +209,18 @@
   },
   "dandelion-0.jpg": {
     "dataset": "tf_flowers",
-    "original": "dandelion/3954167682_128398bf79_m.jpg",
+    "original": "dandelion/14886963928_d4856f1eb6_n.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
-    "attribution": "dandelion/3954167682_128398bf79_m.jpg CC-BY by jenny downing - https://www.flickr.com/photos/jenny-pics/3954167682/",
+    "attribution": "dandelion/14886963928_d4856f1eb6_n.jpg CC-BY by Aki Suomela - https://www.flickr.com/photos/akimela/14886963928/",
     "license": "CC BY 2.0"
   },
   "dandelion-1.jpg": {
     "dataset": "tf_flowers",
-    "original": "dandelion/8979062599_86cac547b8.jpg",
+    "original": "dandelion/16817037661_2980d823e1_n.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
-    "attribution": "dandelion/8979062599_86cac547b8.jpg CC-BY by Mark Michaelis - https://www.flickr.com/photos/mmichaelis/8979062599/",
+    "attribution": "dandelion/16817037661_2980d823e1_n.jpg CC-BY by Shaikh Shahriar - https://www.flickr.com/photos/shaikhshahriar/16817037661/",
     "license": "CC BY 2.0"
   },
   "diospyros_virginiana-0.jpg": {
@@ -241,7 +241,7 @@
   },
   "fraxinus_nigra-0.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/fraxinus_nigra/13291804053025.jpg",
+    "original": "dataset/images/field/fraxinus_nigra/13291804059542.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -249,7 +249,7 @@
   },
   "fraxinus_nigra-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/fraxinus_nigra/13291804058673.jpg",
+    "original": "dataset/images/field/fraxinus_nigra/13291804053025.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -281,7 +281,7 @@
   },
   "ilex_opaca-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/ilex_opaca/1258479670_0007.jpg",
+    "original": "dataset/images/field/ilex_opaca/1248105728_0000.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -289,7 +289,7 @@
   },
   "juglans_cinerea-0.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/juglans_cinerea/13292191169563.jpg",
+    "original": "dataset/images/field/juglans_cinerea/13292191166437.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -297,7 +297,7 @@
   },
   "juglans_cinerea-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/juglans_cinerea/13292191161347.jpg",
+    "original": "dataset/images/field/juglans_cinerea/13292191169563.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -328,8 +328,8 @@
     "license": "CC BY 4.0"
   },
   "maclura_pomifera-1.jpg": {
-    "dataset": "leafsnap_field",
-    "original": "dataset/images/field/maclura_pomifera/1258480798_0000.jpg",
+    "dataset": "leafsnap_lab",
+    "original": "dataset/images/lab/Auto_cropped/maclura_pomifera/pi2775-10-3.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -344,8 +344,8 @@
     "license": "CC BY 4.0"
   },
   "ostrya_virginiana-1.jpg": {
-    "dataset": "leafsnap_lab",
-    "original": "dataset/images/lab/Auto_cropped/ostrya_virginiana/pi2195-01-1.jpg",
+    "dataset": "leafsnap_field",
+    "original": "dataset/images/field/ostrya_virginiana/13001985586278.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -385,7 +385,7 @@
   },
   "ptelea_trifoliata-0.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/ptelea_trifoliata/13292213866663.jpg",
+    "original": "dataset/images/field/ptelea_trifoliata/13292213863852.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -409,7 +409,7 @@
   },
   "quercus_montana-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/quercus_montana/13292231172999.jpg",
+    "original": "dataset/images/field/quercus_montana/13292231173488.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -417,7 +417,7 @@
   },
   "quercus_muehlenbergii-0.jpg": {
     "dataset": "leafsnap_lab",
-    "original": "dataset/images/lab/Auto_cropped/quercus_muehlenbergii/wb1530-05-2.jpg",
+    "original": "dataset/images/lab/Auto_cropped/quercus_muehlenbergii/wb1530-01-1.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -425,7 +425,7 @@
   },
   "quercus_muehlenbergii-1.jpg": {
     "dataset": "leafsnap_lab",
-    "original": "dataset/images/lab/Auto_cropped/quercus_muehlenbergii/wb1530-05-4.jpg",
+    "original": "dataset/images/lab/Auto_cropped/quercus_muehlenbergii/wb1530-05-2.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -433,18 +433,18 @@
   },
   "rose-0.jpg": {
     "dataset": "tf_flowers",
-    "original": "roses/6363976189_e7155e5f9c.jpg",
+    "original": "roses/3663244576_97f595cf4a.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
-    "attribution": "roses/6363976189_e7155e5f9c.jpg CC-BY by maf04 - https://www.flickr.com/photos/maf04/6363976189/",
+    "attribution": "roses/3663244576_97f595cf4a.jpg CC-BY by Akban Martial arts academy - https://www.flickr.com/photos/akban/3663244576/",
     "license": "CC BY 2.0"
   },
   "rose-1.jpg": {
     "dataset": "tf_flowers",
-    "original": "roses/410425647_4586667858.jpg",
+    "original": "roses/6363976189_e7155e5f9c.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
-    "attribution": "roses/410425647_4586667858.jpg CC-BY by Christine Majul - https://www.flickr.com/photos/kitkaphotogirl/410425647/",
+    "attribution": "roses/6363976189_e7155e5f9c.jpg CC-BY by maf04 - https://www.flickr.com/photos/maf04/6363976189/",
     "license": "CC BY 2.0"
   },
   "staphylea_trifolia-0.jpg": {
@@ -465,7 +465,7 @@
   },
   "styrax_japonica-0.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/styrax_japonica/13002208603157.jpg",
+    "original": "dataset/images/field/styrax_japonica/13002208602500.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -473,7 +473,7 @@
   },
   "styrax_japonica-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/styrax_japonica/13002208602500.jpg",
+    "original": "dataset/images/field/styrax_japonica/13002208602506.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -481,45 +481,37 @@
   },
   "sunflower-0.jpg": {
     "dataset": "tf_flowers",
-    "original": "sunflowers/4414084638_03d2db38ae.jpg",
-    "split": "validation",
-    "modifications": "Resized and JPEG encoded",
-    "attribution": "sunflowers/4414084638_03d2db38ae.jpg CC-BY by Jiaren Lau - https://www.flickr.com/photos/jiaren/4414084638/",
-    "license": "CC BY 2.0"
-  },
-  "sunflower-1.jpg": {
-    "dataset": "tf_flowers",
     "original": "sunflowers/21518663809_3d69f5b995_n.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "sunflowers/21518663809_3d69f5b995_n.jpg CC-BY by Jens Holloch - https://www.flickr.com/photos/134055210@N07/21518663809/",
     "license": "CC BY 2.0"
   },
-  "tulip-0.jpg": {
+  "sunflower-1.jpg": {
     "dataset": "tf_flowers",
-    "original": "tulips/13923036338_1ce32c6d4f.jpg",
+    "original": "sunflowers/4414084638_03d2db38ae.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
-    "attribution": "tulips/13923036338_1ce32c6d4f.jpg CC-BY by Samuel Stafford - https://www.flickr.com/photos/118513493@N05/13923036338/",
+    "attribution": "sunflowers/4414084638_03d2db38ae.jpg CC-BY by Jiaren Lau - https://www.flickr.com/photos/jiaren/4414084638/",
+    "license": "CC BY 2.0"
+  },
+  "tulip-0.jpg": {
+    "dataset": "tf_flowers",
+    "original": "tulips/17862445825_f7031d6f26.jpg",
+    "split": "validation",
+    "modifications": "Resized and JPEG encoded",
+    "attribution": "tulips/17862445825_f7031d6f26.jpg CC-BY by Adriano Aurelio Araujo - https://www.flickr.com/photos/adrianoaurelio/17862445825/",
     "license": "CC BY 2.0"
   },
   "tulip-1.jpg": {
     "dataset": "tf_flowers",
-    "original": "tulips/4555842486_dd214a84d7_n.jpg",
+    "original": "tulips/8713398614_88202e452e_n.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
-    "attribution": "tulips/4555842486_dd214a84d7_n.jpg CC-BY by The Glass Beehive* - https://www.flickr.com/photos/theglassbeehive/4555842486/",
+    "attribution": "tulips/8713398614_88202e452e_n.jpg CC-BY by PS-OV-ART Patty Sue O'Hair-Vicknair, Artist - https://www.flickr.com/photos/psovart/8713398614/",
     "license": "CC BY 2.0"
   },
   "ulmus_americana-0.jpg": {
-    "dataset": "leafsnap_field",
-    "original": "dataset/images/field/ulmus_americana/1259110850_0029.jpg",
-    "split": "validation",
-    "modifications": "Resized and JPEG encoded",
-    "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
-    "license": "CC BY 4.0"
-  },
-  "ulmus_americana-1.jpg": {
     "dataset": "leafsnap_field",
     "original": "dataset/images/field/ulmus_americana/1259110850_0015.jpg",
     "split": "validation",
@@ -527,9 +519,17 @@
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
     "license": "CC BY 4.0"
   },
+  "ulmus_americana-1.jpg": {
+    "dataset": "leafsnap_field",
+    "original": "dataset/images/field/ulmus_americana/1259110850_0029.jpg",
+    "split": "validation",
+    "modifications": "Resized and JPEG encoded",
+    "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
+    "license": "CC BY 4.0"
+  },
   "ulmus_pumila-0.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/ulmus_pumila/13291724502140.jpg",
+    "original": "dataset/images/field/ulmus_pumila/13291724509519.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",
@@ -537,7 +537,7 @@
   },
   "ulmus_pumila-1.jpg": {
     "dataset": "leafsnap_field",
-    "original": "dataset/images/field/ulmus_pumila/13291736092616.jpg",
+    "original": "dataset/images/field/ulmus_pumila/13291736090152.jpg",
     "split": "validation",
     "modifications": "Resized and JPEG encoded",
     "attribution": "Ranguelova, Meijer, Oostrum, Liu and Bos (2021), LeafSnap30. Derived from Kumar et al., Leafsnap: A Computer Vision System for Automatic Plant Species Identification, ECCV 2012.",

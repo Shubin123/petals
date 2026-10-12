@@ -74,6 +74,51 @@
     "wiki": "https://en.wikipedia.org/wiki/Aesculus_pavia",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "alpine_sea_holly": {
+    "common": "Alpine sea holly",
+    "scientific": "Alpine sea holly (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Alpine sea holly is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Alpine%20sea%20holly",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06974.jpg"
+  },
+  "anthurium": {
+    "common": "Anthurium",
+    "scientific": "Anthurium (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Anthurium is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Anthurium",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02011.jpg"
+  },
+  "artichoke": {
+    "common": "Artichoke",
+    "scientific": "Artichoke (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Artichoke is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Artichoke",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04093.jpg"
+  },
   "asimina_triloba": {
     "common": "Pawpaw",
     "scientific": "Asimina triloba",
@@ -89,6 +134,216 @@
     "wiki": "https://en.wikipedia.org/wiki/Asimina_triloba",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "azalea": {
+    "common": "Azalea",
+    "scientific": "Azalea (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Azalea is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Azalea",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03581.jpg"
+  },
+  "ball_moss": {
+    "common": "Ball moss",
+    "scientific": "Ball moss (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Ball moss is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Ball%20moss",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06024.jpg"
+  },
+  "balloon_flower": {
+    "common": "Balloon flower",
+    "scientific": "Balloon flower (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Balloon flower is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Balloon%20flower",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06156.jpg"
+  },
+  "barbeton_daisy": {
+    "common": "Barbeton daisy",
+    "scientific": "Barbeton daisy (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Barbeton daisy is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Barbeton%20daisy",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02211.jpg"
+  },
+  "bearded_iris": {
+    "common": "Bearded iris",
+    "scientific": "Bearded iris (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Bearded iris is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Bearded%20iris",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05933.jpg"
+  },
+  "bee_balm": {
+    "common": "Bee balm",
+    "scientific": "Bee balm (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Bee balm is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Bee%20balm",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03070.jpg"
+  },
+  "bird_of_paradise": {
+    "common": "Bird of paradise",
+    "scientific": "Bird of paradise (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Bird of paradise is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Bird%20of%20paradise",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03291.jpg"
+  },
+  "bishop_of_llandaff": {
+    "common": "Bishop of llandaff",
+    "scientific": "Bishop of llandaff (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Bishop of llandaff is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Bishop%20of%20llandaff",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02779.jpg"
+  },
+  "black_eyed_susan": {
+    "common": "Black-eyed susan",
+    "scientific": "Black-eyed susan (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Black-eyed susan is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Black-eyed%20susan",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05890.jpg"
+  },
+  "blackberry_lily": {
+    "common": "Blackberry lily",
+    "scientific": "Blackberry lily (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Blackberry lily is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Blackberry%20lily",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_08035.jpg"
+  },
+  "blanket_flower": {
+    "common": "Blanket flower",
+    "scientific": "Blanket flower (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Blanket flower is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Blanket%20flower",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07899.jpg"
+  },
+  "bolero_deep_blue": {
+    "common": "Bolero deep blue",
+    "scientific": "Bolero deep blue (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Bolero deep blue is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Bolero%20deep%20blue",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07131.jpg"
+  },
+  "bougainvillea": {
+    "common": "Bougainvillea",
+    "scientific": "Bougainvillea (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Bougainvillea is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Bougainvillea",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07483.jpg"
+  },
+  "bromelia": {
+    "common": "Bromelia",
+    "scientific": "Bromelia (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Bromelia is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Bromelia",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07858.jpg"
+  },
   "broussonetia_papyrifera": {
     "common": "Paper mulberry",
     "scientific": "Broussonetia papyrifera",
@@ -103,6 +358,111 @@
     "flowering": "This model identifies leaves; flowering is not used.",
     "wiki": "https://en.wikipedia.org/wiki/Broussonetia_papyrifera",
     "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "buttercup": {
+    "common": "Buttercup",
+    "scientific": "Buttercup (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Buttercup is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Buttercup",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04657.jpg"
+  },
+  "californian_poppy": {
+    "common": "Californian poppy",
+    "scientific": "Californian poppy (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Californian poppy is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Californian%20poppy",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03206.jpg"
+  },
+  "camellia": {
+    "common": "Camellia",
+    "scientific": "Camellia (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Camellia is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Camellia",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07652.jpg"
+  },
+  "canna_lily": {
+    "common": "Canna lily",
+    "scientific": "Canna lily (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Canna lily is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Canna%20lily",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04479.jpg"
+  },
+  "canterbury_bells": {
+    "common": "Canterbury bells",
+    "scientific": "Canterbury bells (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Canterbury bells is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Canterbury%20bells",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06618.jpg"
+  },
+  "cape_flower": {
+    "common": "Cape flower",
+    "scientific": "Cape flower (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Cape flower is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Cape%20flower",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03806.jpg"
+  },
+  "carnation": {
+    "common": "Carnation",
+    "scientific": "Carnation (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Carnation is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Carnation",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06923.jpg"
   },
   "carya_cordiformis": {
     "common": "Bitternut hickory",
@@ -134,6 +494,21 @@
     "wiki": "https://en.wikipedia.org/wiki/Catalpa_bignonioides",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "cautleya_spicata": {
+    "common": "Cautleya spicata",
+    "scientific": "Cautleya spicata (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Cautleya spicata is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Cautleya%20spicata",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06249.jpg"
+  },
   "cercis_canadensis": {
     "common": "Eastern redbud",
     "scientific": "Cercis canadensis",
@@ -164,6 +539,66 @@
     "wiki": "https://en.wikipedia.org/wiki/Chionanthus_virginicus",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "clematis": {
+    "common": "Clematis",
+    "scientific": "Clematis (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Clematis is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Clematis",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_01668.jpg"
+  },
+  "colt_s_foot": {
+    "common": "Colt's foot",
+    "scientific": "Colt's foot (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Colt's foot is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Colt%27s%20foot",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04019.jpg"
+  },
+  "columbine": {
+    "common": "Columbine",
+    "scientific": "Columbine (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Columbine is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Columbine",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02577.jpg"
+  },
+  "corn_poppy": {
+    "common": "Corn poppy",
+    "scientific": "Corn poppy (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Corn poppy is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Corn%20poppy",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06492.jpg"
+  },
   "cryptomeria_japonica": {
     "common": "Japanese cedar",
     "scientific": "Cryptomeria japonica",
@@ -178,6 +613,36 @@
     "flowering": "This model identifies leaves; flowering is not used.",
     "wiki": "https://en.wikipedia.org/wiki/Cryptomeria_japonica",
     "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "cyclamen": {
+    "common": "Cyclamen",
+    "scientific": "Cyclamen (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Cyclamen is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Cyclamen",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_00590.jpg"
+  },
+  "daffodil": {
+    "common": "Daffodil",
+    "scientific": "Daffodil (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Daffodil is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Daffodil",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05707.jpg"
   },
   "daisy": {
     "common": "Daisy",
@@ -208,6 +673,21 @@
     "flowering": "Mostly spring, sporadically all year",
     "wiki": "https://en.wikipedia.org/wiki/Taraxacum_officinale"
   },
+  "desert_rose": {
+    "common": "Desert-rose",
+    "scientific": "Desert-rose (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Desert-rose is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Desert-rose",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04815.jpg"
+  },
   "diospyros_virginiana": {
     "common": "American persimmon",
     "scientific": "Diospyros virginiana",
@@ -222,6 +702,66 @@
     "flowering": "This model identifies leaves; flowering is not used.",
     "wiki": "https://en.wikipedia.org/wiki/Diospyros_virginiana",
     "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "english_marigold": {
+    "common": "English marigold",
+    "scientific": "English marigold (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "English marigold is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=English%20marigold",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05147.jpg"
+  },
+  "fire_lily": {
+    "common": "Fire lily",
+    "scientific": "Fire lily (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Fire lily is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Fire%20lily",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06779.jpg"
+  },
+  "foxglove": {
+    "common": "Foxglove",
+    "scientific": "Foxglove (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Foxglove is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Foxglove",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07419.jpg"
+  },
+  "frangipani": {
+    "common": "Frangipani",
+    "scientific": "Frangipani (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Frangipani is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Frangipani",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_00784.jpg"
   },
   "fraxinus_nigra": {
     "common": "Black ash",
@@ -238,6 +778,96 @@
     "wiki": "https://en.wikipedia.org/wiki/Fraxinus_nigra",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "fritillary": {
+    "common": "Fritillary",
+    "scientific": "Fritillary (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Fritillary is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Fritillary",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03379.jpg"
+  },
+  "garden_phlox": {
+    "common": "Garden phlox",
+    "scientific": "Garden phlox (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Garden phlox is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Garden%20phlox",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05594.jpg"
+  },
+  "gaura": {
+    "common": "Gaura",
+    "scientific": "Gaura (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Gaura is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Gaura",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_08149.jpg"
+  },
+  "gazania": {
+    "common": "Gazania",
+    "scientific": "Gazania (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Gazania is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Gazania",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04481.jpg"
+  },
+  "geranium": {
+    "common": "Geranium",
+    "scientific": "Geranium (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Geranium is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Geranium",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02747.jpg"
+  },
+  "giant_white_arum_lily": {
+    "common": "Giant white arum lily",
+    "scientific": "Giant white arum lily (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Giant white arum lily is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Giant%20white%20arum%20lily",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04902.jpg"
+  },
   "gleditsia_triacanthos": {
     "common": "Honey locust",
     "scientific": "Gleditsia triacanthos",
@@ -252,6 +882,111 @@
     "flowering": "This model identifies leaves; flowering is not used.",
     "wiki": "https://en.wikipedia.org/wiki/Gleditsia_triacanthos",
     "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "globe_flower": {
+    "common": "Globe-flower",
+    "scientific": "Globe-flower (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Globe-flower is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Globe-flower",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06677.jpg"
+  },
+  "globe_thistle": {
+    "common": "Globe thistle",
+    "scientific": "Globe thistle (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Globe thistle is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Globe%20thistle",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07115.jpg"
+  },
+  "grape_hyacinth": {
+    "common": "Grape hyacinth",
+    "scientific": "Grape hyacinth (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Grape hyacinth is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Grape%20hyacinth",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06601.jpg"
+  },
+  "great_masterwort": {
+    "common": "Great masterwort",
+    "scientific": "Great masterwort (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Great masterwort is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Great%20masterwort",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05819.jpg"
+  },
+  "hard_leaved_pocket_orchid": {
+    "common": "Hard-leaved pocket orchid",
+    "scientific": "Hard-leaved pocket orchid (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Hard-leaved pocket orchid is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Hard-leaved%20pocket%20orchid",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05101.jpg"
+  },
+  "hibiscus": {
+    "common": "Hibiscus",
+    "scientific": "Hibiscus (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Hibiscus is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Hibiscus",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_01761.jpg"
+  },
+  "hippeastrum": {
+    "common": "Hippeastrum",
+    "scientific": "Hippeastrum (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Hippeastrum is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Hippeastrum",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04868.jpg"
   },
   "ilex_opaca": {
     "common": "American holly",
@@ -268,6 +1003,21 @@
     "wiki": "https://en.wikipedia.org/wiki/Ilex_opaca",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "japanese_anemone": {
+    "common": "Japanese anemone",
+    "scientific": "Japanese anemone (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Japanese anemone is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Japanese%20anemone",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_08157.jpg"
+  },
   "juglans_cinerea": {
     "common": "Butternut",
     "scientific": "Juglans cinerea",
@@ -282,6 +1032,36 @@
     "flowering": "This model identifies leaves; flowering is not used.",
     "wiki": "https://en.wikipedia.org/wiki/Juglans_cinerea",
     "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "king_protea": {
+    "common": "King protea",
+    "scientific": "King protea (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "King protea is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=King%20protea",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05744.jpg"
+  },
+  "lenten_rose": {
+    "common": "Lenten rose",
+    "scientific": "Lenten rose (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Lenten rose is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Lenten%20rose",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04564.jpg"
   },
   "liriodendron_tulipifera": {
     "common": "Tulip tree",
@@ -298,6 +1078,36 @@
     "wiki": "https://en.wikipedia.org/wiki/Liriodendron_tulipifera",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "lotus": {
+    "common": "Lotus",
+    "scientific": "Lotus (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Lotus is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Lotus",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_01863.jpg"
+  },
+  "love_in_the_mist": {
+    "common": "Love in the mist",
+    "scientific": "Love in the mist (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Love in the mist is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Love%20in%20the%20mist",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06444.jpg"
+  },
   "maclura_pomifera": {
     "common": "Osage orange",
     "scientific": "Maclura pomifera",
@@ -313,6 +1123,156 @@
     "wiki": "https://en.wikipedia.org/wiki/Maclura_pomifera",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "magnolia": {
+    "common": "Magnolia",
+    "scientific": "Magnolia (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Magnolia is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Magnolia",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05520.jpg"
+  },
+  "mallow": {
+    "common": "Mallow",
+    "scientific": "Mallow (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Mallow is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Mallow",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07737.jpg"
+  },
+  "marigold": {
+    "common": "Marigold",
+    "scientific": "Marigold (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Marigold is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Marigold",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05010.jpg"
+  },
+  "mexican_aster": {
+    "common": "Mexican aster",
+    "scientific": "Mexican aster (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Mexican aster is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Mexican%20aster",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06945.jpg"
+  },
+  "mexican_petunia": {
+    "common": "Mexican petunia",
+    "scientific": "Mexican petunia (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Mexican petunia is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Mexican%20petunia",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07779.jpg"
+  },
+  "monkshood": {
+    "common": "Monkshood",
+    "scientific": "Monkshood (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Monkshood is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Monkshood",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06415.jpg"
+  },
+  "moon_orchid": {
+    "common": "Moon orchid",
+    "scientific": "Moon orchid (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Moon orchid is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Moon%20orchid",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07215.jpg"
+  },
+  "morning_glory": {
+    "common": "Morning glory",
+    "scientific": "Morning glory (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Morning glory is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Morning%20glory",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02451.jpg"
+  },
+  "orange_dahlia": {
+    "common": "Orange dahlia",
+    "scientific": "Orange dahlia (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Orange dahlia is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Orange%20dahlia",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05061.jpg"
+  },
+  "osteospermum": {
+    "common": "Osteospermum",
+    "scientific": "Osteospermum (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Osteospermum is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Osteospermum",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05571.jpg"
+  },
   "ostrya_virginiana": {
     "common": "American hophornbeam",
     "scientific": "Ostrya virginiana",
@@ -327,6 +1287,156 @@
     "flowering": "This model identifies leaves; flowering is not used.",
     "wiki": "https://en.wikipedia.org/wiki/Ostrya_virginiana",
     "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "passion_flower": {
+    "common": "Passion flower",
+    "scientific": "Passion flower (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Passion flower is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Passion%20flower",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_00005.jpg"
+  },
+  "pelargonium": {
+    "common": "Pelargonium",
+    "scientific": "Pelargonium (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Pelargonium is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Pelargonium",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04696.jpg"
+  },
+  "peruvian_lily": {
+    "common": "Peruvian lily",
+    "scientific": "Peruvian lily (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Peruvian lily is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Peruvian%20lily",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04270.jpg"
+  },
+  "petunia": {
+    "common": "Petunia",
+    "scientific": "Petunia (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Petunia is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Petunia",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_01456.jpg"
+  },
+  "pincushion_flower": {
+    "common": "Pincushion flower",
+    "scientific": "Pincushion flower (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Pincushion flower is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Pincushion%20flower",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05360.jpg"
+  },
+  "pink_primrose": {
+    "common": "Pink primrose",
+    "scientific": "Pink primrose (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Pink primrose is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Pink%20primrose",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06757.jpg"
+  },
+  "pink_yellow_dahlia": {
+    "common": "Pink-yellow dahlia",
+    "scientific": "Pink-yellow dahlia (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Pink-yellow dahlia is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Pink-yellow%20dahlia",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02947.jpg"
+  },
+  "poinsettia": {
+    "common": "Poinsettia",
+    "scientific": "Poinsettia (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Poinsettia is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Poinsettia",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_01511.jpg"
+  },
+  "primula": {
+    "common": "Primula",
+    "scientific": "Primula (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Primula is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Primula",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03679.jpg"
+  },
+  "prince_of_wales_feathers": {
+    "common": "Prince of wales feathers",
+    "scientific": "Prince of wales feathers (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Prince of wales feathers is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Prince%20of%20wales%20feathers",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06884.jpg"
   },
   "prunus_sargentii": {
     "common": "Sargent's cherry",
@@ -373,6 +1483,21 @@
     "wiki": "https://en.wikipedia.org/wiki/Ptelea_trifoliata",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "purple_coneflower": {
+    "common": "Purple coneflower",
+    "scientific": "Purple coneflower (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Purple coneflower is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Purple%20coneflower",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03886.jpg"
+  },
   "quercus_montana": {
     "common": "Chestnut oak",
     "scientific": "Quercus montana",
@@ -403,6 +1528,21 @@
     "wiki": "https://en.wikipedia.org/wiki/Quercus_muehlenbergii",
     "source": "https://doi.org/10.5281/zenodo.5061353"
   },
+  "red_ginger": {
+    "common": "Red ginger",
+    "scientific": "Red ginger (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Red ginger is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Red%20ginger",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06830.jpg"
+  },
   "rose": {
     "common": "Rose",
     "scientific": "Rosa spp.",
@@ -418,6 +1558,96 @@
     "flowering": "Late spring to autumn",
     "wiki": "https://en.wikipedia.org/wiki/Rose"
   },
+  "ruby_lipped_cattleya": {
+    "common": "Ruby-lipped cattleya",
+    "scientific": "Ruby-lipped cattleya (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Ruby-lipped cattleya is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Ruby-lipped%20cattleya",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04333.jpg"
+  },
+  "siam_tulip": {
+    "common": "Siam tulip",
+    "scientific": "Siam tulip (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Siam tulip is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Siam%20tulip",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07011.jpg"
+  },
+  "silverbush": {
+    "common": "Silverbush",
+    "scientific": "Silverbush (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Silverbush is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Silverbush",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06126.jpg"
+  },
+  "snapdragon": {
+    "common": "Snapdragon",
+    "scientific": "Snapdragon (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Snapdragon is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Snapdragon",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03117.jpg"
+  },
+  "spear_thistle": {
+    "common": "Spear thistle",
+    "scientific": "Spear thistle (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Spear thistle is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Spear%20thistle",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06055.jpg"
+  },
+  "spring_crocus": {
+    "common": "Spring crocus",
+    "scientific": "Spring crocus (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Spring crocus is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Spring%20crocus",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07052.jpg"
+  },
   "staphylea_trifolia": {
     "common": "American bladdernut",
     "scientific": "Staphylea trifolia",
@@ -432,6 +1662,21 @@
     "flowering": "This model identifies leaves; flowering is not used.",
     "wiki": "https://en.wikipedia.org/wiki/Staphylea_trifolia",
     "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "stemless_gentian": {
+    "common": "Stemless gentian",
+    "scientific": "Stemless gentian (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Stemless gentian is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Stemless%20gentian",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05236.jpg"
   },
   "styrax_japonica": {
     "common": "Japanese snowbell",
@@ -461,6 +1706,141 @@
     ],
     "flowering": "Summer to early autumn",
     "wiki": "https://en.wikipedia.org/wiki/Common_sunflower"
+  },
+  "sweet_pea": {
+    "common": "Sweet pea",
+    "scientific": "Sweet pea (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Sweet pea is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Sweet%20pea",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05684.jpg"
+  },
+  "sweet_william": {
+    "common": "Sweet william",
+    "scientific": "Sweet william (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Sweet william is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Sweet%20william",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_03495.jpg"
+  },
+  "sword_lily": {
+    "common": "Sword lily",
+    "scientific": "Sword lily (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Sword lily is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Sword%20lily",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02392.jpg"
+  },
+  "thorn_apple": {
+    "common": "Thorn apple",
+    "scientific": "Thorn apple (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Thorn apple is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Thorn%20apple",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02144.jpg"
+  },
+  "tiger_lily": {
+    "common": "Tiger lily",
+    "scientific": "Tiger lily (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Tiger lily is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Tiger%20lily",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07167.jpg"
+  },
+  "toad_lily": {
+    "common": "Toad lily",
+    "scientific": "Toad lily (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Toad lily is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Toad%20lily",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06694.jpg"
+  },
+  "tree_mallow": {
+    "common": "Tree mallow",
+    "scientific": "Tree mallow (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Tree mallow is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Tree%20mallow",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_02910.jpg"
+  },
+  "tree_poppy": {
+    "common": "Tree poppy",
+    "scientific": "Tree poppy (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Tree poppy is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Tree%20poppy",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05323.jpg"
+  },
+  "trumpet_creeper": {
+    "common": "Trumpet creeper",
+    "scientific": "Trumpet creeper (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Trumpet creeper is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Trumpet%20creeper",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_07949.jpg"
   },
   "tulip": {
     "common": "Tulip",
@@ -520,5 +1900,95 @@
     "flowering": "This model identifies leaves; flowering is not used.",
     "wiki": "https://en.wikipedia.org/wiki/Ulmus_rubra",
     "source": "https://doi.org/10.5281/zenodo.5061353"
+  },
+  "wallflower": {
+    "common": "Wallflower",
+    "scientific": "Wallflower (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Wallflower is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Wallflower",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_00954.jpg"
+  },
+  "water_lily": {
+    "common": "Water lily",
+    "scientific": "Water lily (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Water lily is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Water%20lily",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_00323.jpg"
+  },
+  "watercress": {
+    "common": "Watercress",
+    "scientific": "Watercress (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Watercress is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Watercress",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_00634.jpg"
+  },
+  "wild_pansy": {
+    "common": "Wild pansy",
+    "scientific": "Wild pansy (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Wild pansy is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Wild%20pansy",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_04194.jpg"
+  },
+  "windflower": {
+    "common": "Windflower",
+    "scientific": "Windflower (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Windflower is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Windflower",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_05982.jpg"
+  },
+  "yellow_iris": {
+    "common": "Yellow iris",
+    "scientific": "Yellow iris (flower category)",
+    "family": "Not specified by the source dataset",
+    "also": "Oxford Flowers 102 category; may include cultivars and related plants.",
+    "description": "Yellow iris is a flower category in Oxford Flowers 102. This match identifies the dataset category, not a verified botanical species or cultivar.",
+    "look_for": [
+      "Use a close-up of a well-lit flower head.",
+      "Include the petals and flower centre, and compare with the source dataset example."
+    ],
+    "flowering": "Varies by species, cultivar and location.",
+    "wiki": "https://en.wikipedia.org/w/index.php?search=Yellow%20iris",
+    "source": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html",
+    "example_url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/thumbs/thumbim_06353.jpg"
   }
 }

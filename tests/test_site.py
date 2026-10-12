@@ -1,6 +1,7 @@
 """Checks that the committed GitHub Pages build in site/ is complete and in step with app/static/."""
 
 import json
+import hashlib
 import re
 
 import pytest
@@ -60,6 +61,17 @@ def test_weights_are_quantized():
     assert floats and all(w.get("quantization", {}).get("dtype") == meta.get("quantization", "uint8") for w in floats)
 
 
+def test_model_version_and_weight_names_match_content():
+    graph_path = SITE / "model/model.json"
+    graph = json.loads(graph_path.read_text())
+    meta = json.loads((SITE / "model/metadata.json").read_text())
+    assert meta["model_version"] == hashlib.sha256(graph_path.read_bytes()).hexdigest()
+    for group in graph["weightsManifest"]:
+        for name in group["paths"]:
+            digest = hashlib.sha256((SITE / "model" / name).read_bytes()).hexdigest()[:12]
+            assert name.endswith(f"-{digest}.bin")
+
+
 def test_metadata_matches_species():
     meta = json.loads((SITE / "model" / "metadata.json").read_text())
     species = json.loads((SITE / "species.json").read_text())
@@ -74,7 +86,7 @@ def test_species_json_matches_source():
     for sid, info in site.items():
         assert info["id"] == sid
         assert {k: v for k, v in info.items() if k not in ("id", "samples")} == source[sid]
-        assert info["samples"], f"no sample photos for {sid}"
+        assert info["samples"] or info.get("example_url"), f"no example source for {sid}"
         for s in info["samples"]:
             assert re.fullmatch(rf"samples/{sid}-\d+\.jpg", s)
             assert (SITE / s).is_file(), s

@@ -9,6 +9,7 @@ Usage:
 """
 
 import argparse
+import hashlib
 import json
 import pathlib
 import shutil
@@ -113,9 +114,24 @@ def main():
         model.export(tmp, format="tf_saved_model", verbose=False)
         tfjs.convert_tf_saved_model(tmp, str(args.out / "model"), quantization_dtype_map={quantization: True})
 
+    # Immutable weight names prevent cached shards from an older class count
+    # being combined with a newly downloaded graph.
+    graph_path = args.out / "model/model.json"
+    graph = json.loads(graph_path.read_text())
+    for group in graph["weightsManifest"]:
+        paths = []
+        for name in group["paths"]:
+            shard = args.out / "model" / name
+            digest = hashlib.sha256(shard.read_bytes()).hexdigest()[:12]
+            renamed = shard.with_name(f"{shard.stem}-{digest}{shard.suffix}")
+            shard.rename(renamed)
+            paths.append(renamed.name)
+        group["paths"] = paths
+    graph_path.write_text(json.dumps(graph))
+    meta["model_version"] = hashlib.sha256(graph_path.read_bytes()).hexdigest()
+
     (args.out / "model" / "metadata.json").write_text(json.dumps(meta))
-    if args.check:
-        (args.model_dir / "metadata.json").write_text(json.dumps(meta, indent=2))
+    (args.model_dir / "metadata.json").write_text(json.dumps(meta, indent=2))
 
     species = json.loads((ROOT / "app" / "species.json").read_text())
     species = {sid: species[sid] for sid in meta["labels"]}

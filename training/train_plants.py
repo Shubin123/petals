@@ -44,7 +44,10 @@ def main():
     parser.add_argument("--out", type=pathlib.Path, default=ROOT / "models/plants")
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=32)
+    parser.add_argument("--cpu", action="store_true", help="avoid GPU memory pressure during training")
     args = parser.parse_args()
+    if args.cpu:
+        tf.config.set_visible_devices([], "GPU")
     keras.utils.set_random_seed(1337)
     manifest = json.loads(args.manifest.read_text())
     labels = manifest["labels"]
@@ -54,6 +57,11 @@ def main():
     extractor = keras.Model(model.inputs, model.layers[-3].output)
     augment = keras.Sequential([layers.RandomContrast(0.1), layers.RandomFlip("horizontal"),
                                 layers.RandomRotation(0.1)])
+    @tf.function(reduce_retracing=True)
+    def extract(images, augmented=False):
+        if augmented:
+            images = augment(images, training=True)
+        return extractor(images, training=False)
     cache = args.out / "features.npz"
     if cache.exists():
         cached = np.load(cache)
@@ -69,9 +77,7 @@ def main():
             for copy in range(2 if split == "train" else 1):
                 batches = []
                 for i, (images, _) in enumerate(ds):
-                    if copy:
-                        images = augment(images, training=True)
-                    batches.append(extractor(images, training=False).numpy())
+                    batches.append(extract(images, bool(copy)).numpy().astype(np.float16))
                     if i % 50 == 0:
                         print(f"Features {split} copy {copy}: {i * args.batch_size}/{len(selected)}", flush=True)
                 copies.append(np.concatenate(batches))

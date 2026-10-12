@@ -24,10 +24,13 @@ def test_related_views_and_duplicates_stay_in_one_partition():
 
 def test_expanded_model_and_photo_attribution():
     meta = json.loads((ROOT / "site/model/metadata.json").read_text())
-    assert len(meta["labels"]) == 35
+    assert len(meta["labels"]) >= 35
     assert {"daisy", "dandelion", "rose", "sunflower", "tulip", "acer_rubrum", "ilex_opaca"} <= set(meta["labels"])
     assert meta["architecture"] == "MobileNetV2"
-    assert set(meta["test_by_source"]) == {"tf_flowers", "leafsnap_lab", "leafsnap_field"}
+    assert {"tf_flowers", "leafsnap_lab", "leafsnap_field"} <= set(meta["test_by_source"])
+    if "oxford102" in meta["test_by_source"]:
+        assert len(meta["labels"]) > 100
+        assert {"daffodil", "hibiscus", "petunia"} <= set(meta["labels"])
     assert sum(v["images"] for v in meta["test_by_source"].values()) == meta["test_images"]
     credits = json.loads((ROOT / "site/samples/credits.json").read_text())
     samples = {p.name for p in (ROOT / "site/samples").glob("*.jpg")}

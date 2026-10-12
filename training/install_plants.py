@@ -21,12 +21,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-dir", type=pathlib.Path, default=ROOT / "models/plants")
     parser.add_argument("--manifest", type=pathlib.Path, default=ROOT / "data/plants/manifest.json")
+    parser.add_argument("--species", type=pathlib.Path, default=ROOT / "app/species.json")
     args = parser.parse_args()
     meta = json.loads((args.model_dir / "metadata.json").read_text())
     manifest = json.loads(args.manifest.read_text())
     if meta["labels"] != manifest["labels"]:
         raise ValueError("Model and data labels differ")
-    if set(meta["labels"]) != set(json.loads((ROOT / "app/species.json").read_text())):
+    if set(meta["labels"]) != set(json.loads(args.species.read_text())):
         raise ValueError("Species guide coverage differs from model")
     trained = keras.models.load_model(args.model_dir / "petals.keras")
     model = quantize_like_tfjs(inference_model(trained), "float16")
@@ -44,7 +45,11 @@ def main():
     credits = {}
     for label, sid in enumerate(meta["labels"]):
         candidates = [i for i, row in enumerate(rows) if row["label"] == label
-                      and scores[i].argmax() == label]
+                      and scores[i].argmax() == label and row["source"] != "oxford102"]
+        # Oxford's original release has no explicit redistribution license.
+        # New categories link to dataset examples instead of bundling its photos.
+        if not any(row["id"] == sid and row["source"] != "oxford102" for row in rows):
+            continue
         # Prefer field samples that are confident, then the strongest held-out examples.
         candidates.sort(key=lambda i: (rows[i]["source"] == "leafsnap_field" and scores[i, label] > .95,
                                        scores[i, label]), reverse=True)
@@ -78,6 +83,8 @@ def main():
     if target.exists():
         shutil.rmtree(target)
     shutil.copytree(samples, target)
+    if args.species.resolve() != (ROOT / "app/species.json").resolve():
+        shutil.copy2(args.species, ROOT / "app/species.json")
     previous = ROOT / "models/previous"
     previous.mkdir(exist_ok=True)
     for name in ("petals.keras", "metadata.json"):
